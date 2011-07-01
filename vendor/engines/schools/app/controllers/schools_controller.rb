@@ -13,6 +13,13 @@ class SchoolsController < ApplicationController
     present(@page)
   end
 
+  def next
+    @school = School.next
+    events = @school.events
+    @events_days = events.group_by { |event| event.when.beginning_of_day }
+    render :show
+  end
+
   def show
     @school = School.find(params[:id])
     events = @school.events

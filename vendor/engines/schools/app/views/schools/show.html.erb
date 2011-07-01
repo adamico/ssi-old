@@ -2,13 +2,17 @@
   <%= javascript_include_tag 'jquery-min', 'jquery-ui-custom-min', 'programme_tabs' %>
 <% end %>
 
-<% content_for :body_content_title do %>
-  <%= @school.title %>
-<% end %>
-
 <% content_for :stylesheets do -%>
   <%= stylesheet_link_tag 'jquery-ui' %>
 <% end -%>
+
+<% content_for :title do -%>
+  <%= @school.title %>
+<% end -%>
+
+<% content_for :body_content_title do %>
+  <%= @school.title %>
+<% end %>
 
 <% content_for :body_content_left do %>
   <section id="school_theme">
