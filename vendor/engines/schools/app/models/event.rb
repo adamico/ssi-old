@@ -4,4 +4,8 @@ class Event < ActiveRecord::Base
   validates :title, :presence => true, :uniqueness => true
 
   belongs_to :school
+
+  def time
+    self.when.strftime("%R")
+  end
 end

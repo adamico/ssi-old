@@ -1,123 +1,63 @@
+<% content_for :javascript_libraries do %>
+  <%= javascript_include_tag 'jquery-min', 'jquery-ui-custom-min', 'programme_tabs' %>
+<% end %>
+
 <% content_for :body_content_title do %>
   <%= @school.title %>
 <% end %>
 
-<% content_for :body_content_left do %>
-  <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @school.title %>
-    </p>
-  </section>
-  <section>
-    <h1>Starts At</h1>
-    <p>
-      <%=raw @school.starts_at %>
-    </p>
-  </section>
-  <section>
-    <h1>Ends At</h1>
-    <p>
-      <%=raw @school.ends_at %>
-    </p>
-  </section>
-  <section>
-    <h1>Place</h1>
-    <p>
-      <%=raw @school.place %>
-    </p>
-  </section>
-  <section>
-    <h1>Location</h1>
-    <p>
-      <%=raw @school.location %>
-    </p>
-  </section>
-  <section>
-    <h1>Vignlieu</h1>
-    <p>
-      <%= image_fu @school.vignlieu, nil %>
-    </p>
-  </section>
-  <section>
-    <h1>Price</h1>
-    <p>
-      <%=raw @school.price %>
-    </p>
-  </section>
-  <section>
-    <h1>Deadline</h1>
-    <p>
-      <%=raw @school.deadline %>
-    </p>
-  </section>
-  <section>
-    <h1>Extranight</h1>
-    <p>
-      <%=raw @school.extranight %>
-    </p>
-  </section>
-  <section>
-    <h1>Theme</h1>
-    <p>
-      <%=raw @school.theme %>
-    </p>
-  </section>
-  <section>
-    <h1>Sub Theme</h1>
-    <p>
-      <%=raw @school.sub_theme %>
-    </p>
-  </section>
-  <section>
-    <h1>Organiser</h1>
-    <p>
-      <%=raw @school.organiser %>
-    </p>
-  </section>
-  <section>
-    <h1>Sub Organiser</h1>
-    <p>
-      <%=raw @school.sub_organiser %>
-    </p>
-  </section>
-  <section>
-    <h1>Award</h1>
-    <p>
-      <%=raw @school.award %>
-    </p>
-  </section>
-  <section>
-    <h1>Intro Program</h1>
-    <p>
-      <%=raw @school.intro_program %>
-    </p>
-  </section>
-  <section>
-    <h1>Publication</h1>
-    <p>
-      <%=raw @school.publication %>
-    </p>
-  </section>
-  <section>
-    <h1>State</h1>
-    <p>
-      <%=raw @school.state %>
-    </p>
-  </section>
-<% end %>
+<% content_for :stylesheets do -%>
+  <%= stylesheet_link_tag 'jquery-ui' %>
+<% end -%>
 
-<% content_for :body_content_right do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="schools">
-      <% @schools.each do |school| %>
-        <li>
-          <%= link_to school.title, school_path(school) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
+<% content_for :body_content_left do %>
+  <section id="school_theme">
+    <p><%= @school.theme %></p>
+    <p><%= @school.sub_theme %></p>
+  </section>
+  <section>
+    <p><%= @school.place %> - <%= @school.period %></p>
+  </section>
+  <section>
+    <p><%= @school.organiser %></p>
+    <p><%= @school.sub_organiser %></p>
+  </section>
+  <section>
+    <p><%=raw @school.award %></p>
+  </section>
+  <section>
+    <p><%=raw @school.intro_program %></p>
+  </section>
+  <section>
+    <p><%=raw @school.publication %></p>
+  </section>
+  <section id="programme">
+    <% if @events_days.any? -%>
+      <ul>
+        <% @events_days.each do |day, events| -%>
+          <li><%= link_to day.strftime("%A %e"), "#programme-#{day.day}" %></li>
+        <% end -%>
+      </ul>
+      <% @events_days.each do |day, events| -%>
+        <div id="programme-<%= day.day %>">
+          <ul class="events">
+            <% events.each do |event| -%>
+              <li>
+                <span class="event_when"><%= event.time %></span>
+                 - 
+                <span class="event title"><%= event.title %></span>
+                 : 
+                <span class="event speaker"><%= event.speaker %></span>
+              </li>
+            <% end -%>
+          </ul>
+        </div>
+      <% end -%>
+    <% else %>
+      No programmed events yet.
+    <% end -%>
+  </section>
+    <p>Placeholder for print programme link</p>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>

@@ -1,5 +1,7 @@
 ::Refinery::Application.routes.draw do
+  get "/registration" => "schools#registration"
   resources :schools, :only => [:index, :show]
+  resources :events, :only => [:index, :show]
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     resources :schools, :except => :show do
@@ -8,7 +10,6 @@
       end
     end
   end
-  resources :events, :only => [:index, :show]
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     resources :events, :except => :show do

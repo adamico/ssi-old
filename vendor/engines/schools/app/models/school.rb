@@ -15,4 +15,16 @@ class School < ActiveRecord::Base
   def self.next
     last
   end
+
+  def price_without_vat
+    (price / 1.196).round(2)
+  end
+
+  def when_and_where
+    period + " (#{place})"
+  end
+
+  def period
+    "#{starts_at.day}-#{ends_at.day} #{starts_at.strftime'%B'} #{starts_at.year}"
+  end
 end

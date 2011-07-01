@@ -1,0 +1,7 @@
+<section id='body_content'>
+  <article id="next_school">
+    <h2><%= link_to @school.title, school_path(@school) %></h2>
+    <h3><%= @school.theme %></h3>
+    <p class='school_when_where'><%= @school.when_and_where %></p>
+  </article>
+</section>

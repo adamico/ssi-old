@@ -1,0 +1,27 @@
+<% content_for :body_content_title do %>
+ Registration Form
+<% end -%>
+
+<% content_for :body_content_left do %>
+  <section>
+    <p><%= @school.title %></p>
+    <p><%= @school.theme %></p>
+  </section>
+  <section>
+    <p><%= @school.period %></p>
+    <p><%= @school.location %></p>
+    <p><%= @school.place %></p>
+    <p><%= image_fu @school.vignlieu, nil %></p>
+  </section>
+  <section>
+    <h3>Registration Fee</h3>
+    <p><%= @school.price.round %> Euros (<%= @school.price_without_vat %> € + VAT 19.6%)</p>
+    <h3>DEADLINE FOR REGISTRATION is <%= l @school.deadline, :format => :long %></h3>
+    <p>
+      This includes meeting and syllabus, full accommodation, meals, social events and gala dinner. The registration will only be definitive if the payment is received within two weeks after receipt of the registration form. Registration will be accepted on a first come-first serve basis.
+    </p>
+    <p><%=raw @school.extranight %></p>
+  </section>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
