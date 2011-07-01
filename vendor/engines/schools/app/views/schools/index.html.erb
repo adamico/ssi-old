@@ -1,0 +1,15 @@
+<% content_for :body_content_left do %>
+  <% if @schools.any? -%>
+    <ul id="schools">
+      <% @schools.each do |school| %>
+        <li>
+          <%= link_to school.title, school_path(school) %>
+        </li>
+      <% end %>
+    </ul>
+  <% else -%>
+    <p>No previous schools found</p>
+  <% end -%>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

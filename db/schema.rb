@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110629085731) do
+ActiveRecord::Schema.define(:version => 20110701075020) do
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "when"
+    t.string   "speaker"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "school_id"
+  end
+
+  add_index "events", ["id"], :name => "index_events_on_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -116,6 +128,31 @@ ActiveRecord::Schema.define(:version => 20110629085731) do
 
   add_index "roles_users", ["role_id", "user_id"], :name => "index_roles_users_on_role_id_and_user_id"
   add_index "roles_users", ["user_id", "role_id"], :name => "index_roles_users_on_user_id_and_role_id"
+
+  create_table "schools", :force => true do |t|
+    t.string   "title"
+    t.date     "starts_at"
+    t.date     "ends_at"
+    t.string   "place"
+    t.string   "location"
+    t.integer  "vignlieu_id"
+    t.decimal  "price"
+    t.date     "deadline"
+    t.text     "extranight"
+    t.string   "theme"
+    t.string   "sub_theme"
+    t.string   "organiser"
+    t.string   "sub_organiser"
+    t.text     "award"
+    t.text     "intro_program"
+    t.text     "publication"
+    t.string   "state"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "schools", ["id"], :name => "index_schools_on_id"
 
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"
