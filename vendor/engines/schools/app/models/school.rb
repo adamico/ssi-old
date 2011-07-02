@@ -6,8 +6,6 @@ class School < ActiveRecord::Base
   belongs_to :vignlieu, :class_name => 'Image'
   has_many :events, :dependent => :destroy
 
-  default_scope order('id DESC')
-
   def self.previous
     all.reject {|school| school === School.next}
   end
