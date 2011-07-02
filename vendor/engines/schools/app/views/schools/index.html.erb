@@ -2,9 +2,7 @@
   <% if @schools.any? -%>
     <ul id="schools">
       <% @schools.each do |school| %>
-        <li>
-          <%= link_to school.title, school_path(school) %>
-        </li>
+        <li><%= school.title %></li>
       <% end %>
     </ul>
   <% else -%>

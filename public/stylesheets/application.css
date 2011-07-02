@@ -2,3 +2,10 @@
   Override default refinery application CSS below.
   Formatting applies to all frontend.
 */
+span.add_events {
+  position: absolute;
+  right: 120px;
+  top: 3px;
+  text-align: right;
+  line-height: 28px;
+}

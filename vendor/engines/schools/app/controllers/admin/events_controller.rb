@@ -5,6 +5,9 @@ module Admin
 
     crudify :event, :xhr_paging => true
 
+    def new
+      @event = Event.new(:school_id => params[:school])
+    end
     protected
 
     def find_all_schools

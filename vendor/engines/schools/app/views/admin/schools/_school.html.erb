@@ -1,8 +1,13 @@
+<% content_for :stylesheets do -%>
+  <%= stylesheet_link_tag "application" %>
+<% end -%>
+
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(school) -%>">
   <span class='title'>
     <%= school.title %>
     <span class="preview">&nbsp;</span>
   </span>
+  <span class="add_events"><%= link_to "Add Events", new_admin_event_path(:school => school) %></span>
   <span class='actions'>
     <%= link_to refinery_icon_tag("application_go.png"), school_path(school),
         :title => t('.view_live_html'),
