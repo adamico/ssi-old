@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    registrations:
+      title: Registrations
+  admin:
+    registrations:
+      actions:
+        create_new: Lag en ny Registration
+        reorder: Endre rekkefølgen på Registrations
+        reorder_done: Ferdig å endre rekkefølgen Registrations
+      records:
+        title: Registrations
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Registrations enda. Klikk på "Lag en ny Registration" for å legge til din første registration.
+      registration:
+        view_live_html: Vis hvordan denne registration ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne registration
+        delete: Fjern denne registration permanent
+  registrations:
+    show:
+      other: Andre Registrations

@@ -1,6 +1,7 @@
 PATH
   remote: vendor/engines
   specs:
+    refinerycms-registrations (1.0)
     refinerycms-schools (1.0)
 
 GEM
@@ -251,6 +252,7 @@ DEPENDENCIES
   pg
   refinerycms (~> 1.0.3)
   refinerycms-i18n (~> 1.0.0)
+  refinerycms-registrations (= 1.0)!
   refinerycms-schools (= 1.0)!
   refinerycms-testing (~> 1.0.1)
   sqlite3

@@ -1,0 +1,159 @@
+<% content_for :body_content_title do %>
+  <%= @registration.surname %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Surname</h1>
+    <p>
+      <%=raw @registration.surname %>
+    </p>
+  </section>
+  <section>
+    <h1>First Name</h1>
+    <p>
+      <%=raw @registration.first_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @registration.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Company</h1>
+    <p>
+      <%=raw @registration.company %>
+    </p>
+  </section>
+  <section>
+    <h1>Address</h1>
+    <p>
+      <%=raw @registration.address %>
+    </p>
+  </section>
+  <section>
+    <h1>City</h1>
+    <p>
+      <%=raw @registration.city %>
+    </p>
+  </section>
+  <section>
+    <h1>Zip</h1>
+    <p>
+      <%=raw @registration.zip %>
+    </p>
+  </section>
+  <section>
+    <h1>Country</h1>
+    <p>
+      <%=raw @registration.country %>
+    </p>
+  </section>
+  <section>
+    <h1>Phone</h1>
+    <p>
+      <%=raw @registration.phone %>
+    </p>
+  </section>
+  <section>
+    <h1>Fax</h1>
+    <p>
+      <%=raw @registration.fax %>
+    </p>
+  </section>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @registration.email %>
+    </p>
+  </section>
+  <section>
+    <h1>Arrival</h1>
+    <p>
+      <%=raw @registration.arrival %>
+    </p>
+  </section>
+  <section>
+    <h1>Departure</h1>
+    <p>
+      <%=raw @registration.departure %>
+    </p>
+  </section>
+  <section>
+    <h1>Accompagne</h1>
+    <p>
+      <%=raw @registration.accompagne %>
+    </p>
+  </section>
+  <section>
+    <h1>Ip</h1>
+    <p>
+      <%=raw @registration.ip %>
+    </p>
+  </section>
+  <section>
+    <h1>Payment</h1>
+    <p>
+      <%=raw @registration.payment_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Transaction</h1>
+    <p>
+      <%=raw @registration.transaction %>
+    </p>
+  </section>
+  <section>
+    <h1>Status</h1>
+    <p>
+      <%=raw @registration.status %>
+    </p>
+  </section>
+  <section>
+    <h1>Amount</h1>
+    <p>
+      <%=raw @registration.amount %>
+    </p>
+  </section>
+  <section>
+    <h1>Transmission Date</h1>
+    <p>
+      <%=raw @registration.transmission_date %>
+    </p>
+  </section>
+  <section>
+    <h1>Payement Date</h1>
+    <p>
+      <%=raw @registration.payement_date %>
+    </p>
+  </section>
+  <section>
+    <h1>Payement Time</h1>
+    <p>
+      <%=raw @registration.payement_time %>
+    </p>
+  </section>
+  <section>
+    <h1>Date Cb</h1>
+    <p>
+      <%=raw @registration.date_cb %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="registrations">
+      <% @registrations.each do |registration| %>
+        <li>
+          <%= link_to registration.surname, registration_path(registration) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

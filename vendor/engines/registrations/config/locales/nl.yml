@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    registrations:
+      title: Registrations
+  admin:
+    registrations:
+      actions:
+        create_new: Maak een nieuwe Registration
+        reorder: Wijzig de volgorde van de Registrations
+        reorder_done: Klaar met het wijzingen van de volgorde van de Registrations
+      records:
+        title: Registrations
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Registrations. Druk op 'Maak een nieuwe Registration' om de eerste aan te maken.
+      registration:
+        view_live_html: Bekijk deze registration op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze registration
+        delete: Verwijder deze registration voor eeuwig
+  registrations:
+    show:
+      other: Andere Registrations

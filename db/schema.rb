@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110701075020) do
+ActiveRecord::Schema.define(:version => 20110702205458) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -106,6 +106,37 @@ ActiveRecord::Schema.define(:version => 20110701075020) do
   end
 
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
+
+  create_table "registrations", :force => true do |t|
+    t.string   "surname"
+    t.string   "first_name"
+    t.string   "title"
+    t.string   "company"
+    t.string   "address"
+    t.string   "city"
+    t.string   "zip"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.date     "arrival"
+    t.date     "departure"
+    t.string   "accompagne"
+    t.string   "ip"
+    t.integer  "payment_id"
+    t.string   "transaction"
+    t.integer  "status"
+    t.integer  "amount"
+    t.string   "transmission_date"
+    t.string   "payement_date"
+    t.string   "payement_time"
+    t.datetime "date_cb"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "registrations", ["id"], :name => "index_registrations_on_id"
 
   create_table "resources", :force => true do |t|
     t.string   "file_mime_type"

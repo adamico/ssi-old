@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    registrations:
+      title: Registrations
+  admin:
+    registrations:
+      actions:
+        create_new: CREATE NEW Registration
+        reorder: REORDR Registrations
+        reorder_done: DUN REORDERIN Registrations
+      records:
+        title: Registrations
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Registrations YET. CLICK "CREATE NEW Registration" 2 ADD UR FURST registration.
+      registration:
+        view_live_html: VIEW DIS registration LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS registration
+        delete: REMOOV DIS registration FOREVR
+  registrations:
+    show:
+      other: OTHR Registrations

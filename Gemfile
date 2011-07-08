@@ -69,3 +69,5 @@ gem 'state_machine'
 gem 'refinerycms-schools', '1.0', :path => 'vendor/engines'
 
 gem 'refinerycms-schools', '1.0', :path => 'vendor/engines'
+
+gem 'refinerycms-registrations', '1.0', :path => 'vendor/engines'
