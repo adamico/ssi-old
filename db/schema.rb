@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110702205458) do
+ActiveRecord::Schema.define(:version => 20110708110905) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -92,6 +92,12 @@ ActiveRecord::Schema.define(:version => 20110702205458) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "payments", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"
