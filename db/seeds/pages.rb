@@ -1,6 +1,8 @@
+# encoding: utf-8
 page_position = -1
 
 home_page = Page.create(:title => "Home",
+            :show_in_menu => false,
             :deletable => false,
             :link_url => "/",
             :position => (page_position += 1))
@@ -27,16 +29,75 @@ page_not_found_page.parts.create({
               :position => 0
             })
 
-about_us_page = Page.create(:title => "About",
+about_us_page = Page.create(:title => "Summerschool",
             :deletable => true,
+            :skip_to_first_child => true,
             :position => (page_position += 1))
 about_us_page.parts.create({
               :title => "Body",
-              :body => "<p>This is just a standard text page example. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin metus dolor, hendrerit sit amet, aliquet nec, posuere sed, purus. Nullam et velit iaculis odio sagittis placerat. Duis metus tellus, pellentesque ut, luctus id, egestas a, lorem. Praesent vitae mauris. Aliquam sed nulla. Sed id nunc vitae leo suscipit viverra. Proin at leo ut lacus consequat rhoncus. In hac habitasse platea dictumst. Nunc quis tortor sed libero hendrerit dapibus.\n\nInteger interdum purus id erat. Duis nec velit vitae dolor mattis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pellentesque dignissim lacus. Nulla semper euismod arcu. Suspendisse egestas, erat a consectetur dapibus, felis orci cursus eros, et sollicitudin purus urna et metus. Integer eget est sed nunc euismod vestibulum. Integer nulla dui, tristique in, euismod et, interdum imperdiet, enim. Mauris at lectus. Sed egestas tortor nec mi.</p>",
+              :body => "",
               :position => 0
             })
-about_us_page.parts.create({
-              :title => "Side Body",
-              :body => "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla nisi a elit. Duis ultricies orci ut arcu. Ut ac nibh. Duis blandit rhoncus magna. Pellentesque semper risus ut magna. Etiam pulvinar tellus eget diam. Morbi blandit. Donec pulvinar mauris at ligula. Sed pellentesque, ipsum id congue molestie, lectus risus egestas pede, ac viverra diam lacus ac urna. Aenean elit.</p>",
-              :position => 1
+
+about_us_page_position = -1
+philosophy_page = about_us_page.children.create(:title => "Philosophy",
+        :deletable => true,
+        :position => (about_us_page_position += 1))
+philosophy_page.parts.create({
+              :title => "Body",
+              :body => "<p>The Summerschool in Immunotoxicology is a non-profit association with the objective of teaching and promoting Immunotoxicology.</p><p>The association was founded by its present president : Pr Jacques Descotes in 1992. Each year, a summer school in immunotoxicology is organized to provide toxicologists from the industry as well as academia, state-of-the-art information and current trends on one selected aspect of immunotoxicology.</p><p>The proceedings of the 1st summerschool were published in a special issue of the <em>Journal de Toxicologie Expérimentale et Clinique</em>, then from the 2nd to the 10th summerschool in Elsevier's <em>Toxicology</em>.</p>",
+              :position => 0
             })
+
+staff_page = about_us_page.children.create(:title => "Staff",
+        :deletable => true,
+        :position => (about_us_page_position += 1))
+staff_page.parts.create({
+              :title => "Body",
+              :body => "Work in progress",
+              :position => 0
+            })
+
+next_school_page = Page.create(:title => "Next School",
+            :deletable => true,
+            :skip_to_first_child => true,
+            :position => (page_position += 1))
+next_school_page.parts.create({
+              :title => "Body",
+              :body => "",
+              :position => 0
+            })
+
+next_school_page_position = -1
+
+program_page = next_school_page.children.create(:title => "Program",
+        :deleletable => false,
+        :link_url => "/next",
+        :position => (next_school_page_position += 1))
+program_page.parts.create({
+              :title => "Body",
+              :body => "",
+              :position => 0
+            })
+
+registration_form_page = next_school_page.children.create(:title => "Registration Form",
+        :deleletable => false,
+        :link_url => "/registration",
+        :position => (next_school_page_position += 1))
+registration_form_page.parts.create({
+              :title => "Body",
+              :body => "",
+              :position => 0
+            })
+
+previous_schools_page = Page.create(:title => "Previous Schools",
+            :deletable => false,
+            :link_url => "/schools",
+            :position => (page_position += 1))
+previous_schools_page.parts.create({
+              :title => "Body",
+              :body => "",
+              :position => 0
+            })
+
+previous_schools_page_position = -1
