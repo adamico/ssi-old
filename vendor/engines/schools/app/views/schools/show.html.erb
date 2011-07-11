@@ -15,53 +15,57 @@
 <% end %>
 
 <% content_for :body_content_left do %>
-  <section id="school_theme">
-    <p><%= @school.theme %></p>
-    <p><%= @school.sub_theme %></p>
-  </section>
-  <section>
-    <p><%= @school.place %> - <%= @school.period %></p>
-  </section>
-  <section>
-    <p><%= @school.organiser %></p>
-    <p><%= @school.sub_organiser %></p>
-  </section>
-  <section>
-    <p><%=raw @school.award %></p>
-  </section>
-  <section>
-    <p><%=raw @school.intro_program %></p>
-  </section>
-  <section>
-    <p><%=raw @school.publication %></p>
-  </section>
-  <section id="programme">
-    <% if @events_days.any? -%>
-      <ul>
+  <% if @school -%>
+    <section id="school_theme">
+      <p><%= @school.theme %></p>
+      <p><%= @school.sub_theme %></p>
+    </section>
+    <section>
+      <p><%= @school.place %> - <%= @school.period %></p>
+    </section>
+    <section>
+      <p><%= @school.organiser %></p>
+      <p><%= @school.sub_organiser %></p>
+    </section>
+    <section>
+      <p><%=raw @school.award %></p>
+    </section>
+    <section>
+      <p><%=raw @school.intro_program %></p>
+    </section>
+    <section>
+      <p><%=raw @school.publication %></p>
+    </section>
+    <section id="programme">
+      <% if @events_days.any? -%>
+        <ul>
+          <% @events_days.each do |day, events| -%>
+            <li><%= link_to day.strftime("%A %e"), "#programme-#{day.day}" %></li>
+          <% end -%>
+        </ul>
         <% @events_days.each do |day, events| -%>
-          <li><%= link_to day.strftime("%A %e"), "#programme-#{day.day}" %></li>
+          <div id="programme-<%= day.day %>">
+            <ul class="events">
+              <% events.each do |event| -%>
+                <li>
+                  <span class="event_when"><%= event.time %></span>
+                   - 
+                  <span class="event title"><%= event.title %></span>
+                   : 
+                  <span class="event speaker"><%= event.speaker %></span>
+                </li>
+              <% end -%>
+            </ul>
+          </div>
         <% end -%>
-      </ul>
-      <% @events_days.each do |day, events| -%>
-        <div id="programme-<%= day.day %>">
-          <ul class="events">
-            <% events.each do |event| -%>
-              <li>
-                <span class="event_when"><%= event.time %></span>
-                 - 
-                <span class="event title"><%= event.title %></span>
-                 : 
-                <span class="event speaker"><%= event.speaker %></span>
-              </li>
-            <% end -%>
-          </ul>
-        </div>
+      <% else %>
+        No programmed events yet.
       <% end -%>
-    <% else %>
-      No programmed events yet.
-    <% end -%>
-  </section>
+    </section>
     <p>Placeholder for print programme link</p>
+  <% else -%>
+    No next school found.
+  <% end -%>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
