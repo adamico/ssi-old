@@ -1,12 +1,29 @@
+---
 fr:
   shared:
     admin:
       image_picker:
         image: image
   plugins:
+    payments:
+      title: Payments
     registrations:
       title: Registrations
   admin:
+    payments:
+      actions:
+        create_new: Créer un(e) nouve(au/l/lle) Payment
+        reorder: Réordonner les Payments
+        reorder_done: Fin de réordonnancement des Payments
+      records:
+        title: Payments
+        sorry_no_results: Désolé ! Aucun résultat.
+        no_items_yet: Il n'y a actuellement aucun(e) Payment. Cliquer sur "Créer un(e)
+          nouve(au/l/lle) Payment" pour créer votre premi(er/ère) payment.
+      payment:
+        view_live_html: Voir ce(t/tte) payment <br/><em>(Ouvre une nouvelle fenêtre)</em>
+        edit: Modifier ce(t/tte) payment
+        delete: Supprimer définitivement ce(t/tte) payment
     registrations:
       actions:
         create_new: Créer un(e) nouve(au/l/lle) Registration
@@ -14,12 +31,16 @@ fr:
         reorder_done: Fin de réordonnancement des Registrations
       records:
         title: Registrations
-        sorry_no_results: "Désolé ! Aucun résultat."
-        no_items_yet: 'Il n''y a actuellement aucun(e) Registration. Cliquer sur "Créer un(e) nouve(au/l/lle) Registration" pour créer votre premi(er/ère) registration.'
+        sorry_no_results: Désolé ! Aucun résultat.
+        no_items_yet: Il n'y a actuellement aucun(e) Registration. Cliquer sur "Créer
+          un(e) nouve(au/l/lle) Registration" pour créer votre premi(er/ère) registration.
       registration:
         view_live_html: Voir ce(t/tte) registration <br/><em>(Ouvre une nouvelle fenêtre)</em>
         edit: Modifier ce(t/tte) registration
         delete: Supprimer définitivement ce(t/tte) registration
+  payments:
+    show:
+      other: Autres Payments
   registrations:
     show:
       other: Autres Registrations

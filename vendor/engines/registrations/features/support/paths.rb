@@ -8,6 +8,11 @@ module NavigationHelpers
 
          when /the new registration form/
           new_admin_registration_path
+        when /the list of payments/
+          admin_payments_path
+
+         when /the new payment form/
+          new_admin_payment_path
         else
           nil
         end

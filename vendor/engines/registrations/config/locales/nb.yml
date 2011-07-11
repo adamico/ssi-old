@@ -1,8 +1,26 @@
+---
 nb:
   plugins:
+    payments:
+      title: Payments
     registrations:
       title: Registrations
   admin:
+    payments:
+      actions:
+        create_new: Lag en ny Payment
+        reorder: Endre rekkefølgen på Payments
+        reorder_done: Ferdig å endre rekkefølgen Payments
+      records:
+        title: Payments
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Payments enda. Klikk på "Lag en ny Payment" for
+          å legge til din første payment.
+      payment:
+        view_live_html: Vis hvordan denne payment ser ut offentlig <br/><em>(åpner
+          i et nytt vindu)</em>
+        edit: Rediger denne payment
+        delete: Fjern denne payment permanent
     registrations:
       actions:
         create_new: Lag en ny Registration
@@ -11,11 +29,16 @@ nb:
       records:
         title: Registrations
         sorry_no_results: Beklager! Vi fant ikke noen resultater.
-        no_items_yet: Det er ingen Registrations enda. Klikk på "Lag en ny Registration" for å legge til din første registration.
+        no_items_yet: Det er ingen Registrations enda. Klikk på "Lag en ny Registration"
+          for å legge til din første registration.
       registration:
-        view_live_html: Vis hvordan denne registration ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        view_live_html: Vis hvordan denne registration ser ut offentlig <br/><em>(åpner
+          i et nytt vindu)</em>
         edit: Rediger denne registration
         delete: Fjern denne registration permanent
+  payments:
+    show:
+      other: Andre Payments
   registrations:
     show:
       other: Andre Registrations

@@ -1,12 +1,29 @@
+---
 lolcat:
   shared:
     admin:
       image_picker:
         image: IMAGE
   plugins:
+    payments:
+      title: Payments
     registrations:
       title: Registrations
   admin:
+    payments:
+      actions:
+        create_new: CREATE NEW Payment
+        reorder: REORDR Payments
+        reorder_done: DUN REORDERIN Payments
+      records:
+        title: Payments
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Payments YET. CLICK "CREATE NEW Payment" 2 ADD UR
+          FURST payment.
+      payment:
+        view_live_html: VIEW DIS payment LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS payment
+        delete: REMOOV DIS payment FOREVR
     registrations:
       actions:
         create_new: CREATE NEW Registration
@@ -15,11 +32,15 @@ lolcat:
       records:
         title: Registrations
         sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
-        no_items_yet: THAR R NO Registrations YET. CLICK "CREATE NEW Registration" 2 ADD UR FURST registration.
+        no_items_yet: THAR R NO Registrations YET. CLICK "CREATE NEW Registration"
+          2 ADD UR FURST registration.
       registration:
         view_live_html: VIEW DIS registration LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
         edit: EDIT DIS registration
         delete: REMOOV DIS registration FOREVR
+  payments:
+    show:
+      other: OTHR Payments
   registrations:
     show:
       other: OTHR Registrations

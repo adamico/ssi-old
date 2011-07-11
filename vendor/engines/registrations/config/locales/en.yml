@@ -1,12 +1,29 @@
+---
 en:
   shared:
     admin:
       image_picker:
         image: image
   plugins:
+    payments:
+      title: Payments
     registrations:
       title: Registrations
   admin:
+    payments:
+      actions:
+        create_new: Add New Payment
+        reorder: Reorder Payments
+        reorder_done: Done Reordering Payments
+      records:
+        title: Payments
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Payments yet. Click "Add New Payment" to add your
+          first payment.
+      payment:
+        view_live_html: View this payment live <br/><em>(opens in a new window)</em>
+        edit: Edit this payment
+        delete: Remove this payment forever
     registrations:
       actions:
         create_new: Add New Registration
@@ -15,11 +32,15 @@ en:
       records:
         title: Registrations
         sorry_no_results: Sorry! There are no results found.
-        no_items_yet: There are no Registrations yet. Click "Add New Registration" to add your first registration.
+        no_items_yet: There are no Registrations yet. Click "Add New Registration"
+          to add your first registration.
       registration:
         view_live_html: View this registration live <br/><em>(opens in a new window)</em>
         edit: Edit this registration
         delete: Remove this registration forever
+  payments:
+    show:
+      other: Other Payments
   registrations:
     show:
       other: Other Registrations

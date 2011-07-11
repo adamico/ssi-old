@@ -1,7 +1,7 @@
 require 'refinerycms-base'
 
 module Refinery
-  module Registrations
+  module Payments
     class Engine < Rails::Engine
       initializer "static assets" do |app|
         app.middleware.insert_after ::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public"
@@ -9,14 +9,13 @@ module Refinery
 
       config.after_initialize do
         Refinery::Plugin.register do |plugin|
-          plugin.name = "registrations"
+          plugin.name = "payments"
           plugin.activity = {
-            :class => Registration,
-            :title => 'surname'
+            :class => Payment,
+            :title => 'name'
           }
         end
       end
     end
   end
 end
-require File.expand_path('../refinerycms-payments', __FILE__)
