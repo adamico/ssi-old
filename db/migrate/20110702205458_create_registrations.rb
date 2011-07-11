@@ -18,7 +18,7 @@ class CreateRegistrations < ActiveRecord::Migration
       t.string :accompagne
       t.string :ip
       t.integer :payment_id
-      t.string :transaction
+      t.string :transaction_string
       t.integer :status
       t.integer :amount
       t.string :transmission_date
