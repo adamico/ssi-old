@@ -63,6 +63,7 @@ end
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '~> 1.0.0'
 gem 'state_machine'
+gem 'thin'
 
 # END USER DEFINED
 
@@ -71,3 +72,5 @@ gem 'refinerycms-schools', '1.0', :path => 'vendor/engines'
 gem 'refinerycms-schools', '1.0', :path => 'vendor/engines'
 
 gem 'refinerycms-registrations', '1.0', :path => 'vendor/engines'
+
+
