@@ -15,8 +15,10 @@ class SchoolsController < ApplicationController
 
   def next
     @school = School.next
-    events = @school.events
-    @events_days = events.group_by { |event| event.when.beginning_of_day }
+    if @school
+      events = @school.events
+      @events_days = events.group_by { |event| event.when.beginning_of_day }
+    end
     render :show
   end
 

@@ -6,16 +6,16 @@
   <%= stylesheet_link_tag 'jquery-ui' %>
 <% end -%>
 
-<% content_for :title do -%>
-  <%= @school.title %>
-<% end -%>
+<% if @school -%>
+  <% content_for :title do -%>
+    <%= @school.title %>
+  <% end -%>
 
-<% content_for :body_content_title do %>
-  <%= @school.title %>
-<% end %>
+  <% content_for :body_content_title do %>
+    <%= @school.title %>
+  <% end %>
 
-<% content_for :body_content_left do %>
-  <% if @school -%>
+  <% content_for :body_content_left do %>
     <section id="school_theme">
       <p><%= @school.theme %></p>
       <p><%= @school.sub_theme %></p>
@@ -63,9 +63,9 @@
       <% end -%>
     </section>
     <p>Placeholder for print programme link</p>
-  <% else -%>
-    No next school found.
-  <% end -%>
-<% end %>
+  <% end %>
+<% else -%>
+  No next school found.
+<% end -%>
 
 <%= render :partial => "/shared/content_page" %>
