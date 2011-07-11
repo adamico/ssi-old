@@ -26,12 +26,14 @@ class School < ActiveRecord::Base
     "#{starts_at.day}-#{ends_at.day} #{starts_at.strftime'%B'} #{starts_at.year}"
   end
 
-  # state machines
-  ### default state machine 'state'
-
   def expired?
     Time.now.to_date >= deadline
   end
+
+  # state machines
+  ### default state machine 'state'
+
+  STATES = %w(draft announced active closed)
 
   state_machine :initial => :draft do
     event :announce do
@@ -40,8 +42,8 @@ class School < ActiveRecord::Base
     event :open do
       transition :announced => :active
     end
-    state :draft
-    state :announced
-    state :active
+    event :close do
+      transition :active => :closed
+    end
   end
 end

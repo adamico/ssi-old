@@ -7,6 +7,19 @@
     <%= school.title %>
     <span class="preview">&nbsp;</span>
   </span>
+  <span class="state">
+    <%= school.human_state_name %>
+    <% if school.state_transitions.any? -%>
+      <%= form_for [:admin, school] do |f| -%>
+        <%= f.label "=>" -%>
+        <%= f.collection_select :state_event,
+          school.state_transitions, :event, :human_to_name, {},
+          {:style => "display:none;" } -%>
+        <%= f.submit school.state_transitions.first.event.to_s.humanize %>
+      <% end -%>
+    <% end -%>
+  </span>
+
   <span class="add_events"><%= link_to "Add Events", new_admin_event_path(:school => school) %></span>
   <span class='actions'>
     <%= link_to refinery_icon_tag("application_go.png"), school_path(school),

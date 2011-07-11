@@ -90,7 +90,7 @@
 
   <div class='field'>
     <%= f.label :state -%>
-    <%= f.text_field :state  -%>
+    <%= f.collection_select :state_event, @school.state_transitions, :event, :human_to_name, :include_blank => @school.human_state_name  -%>
   </div>
 
   <%= render :partial => "/shared/admin/form_actions",
