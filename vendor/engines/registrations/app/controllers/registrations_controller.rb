@@ -3,7 +3,9 @@ class RegistrationsController < ApplicationController
   before_filter :find_page, :only => [:create, :new]
 
   def new
-    @registration = Registration.new
+    next_school = School.next
+    @school = next_school.try(:active?) ? next_school : nil
+    @registration = Registration.new(:school_id => @school) if @school
   end
 
   def create
