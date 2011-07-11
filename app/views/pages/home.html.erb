@@ -1,7 +1,11 @@
 <section id='body_content'>
-  <article id="next_school">
-    <h2><%= link_to @school.title, next_path %></h2>
-    <h3><%= @school.theme %></h3>
-    <p class='school_when_where'><%= @school.when_and_where %></p>
-  </article>
+  <% if @school -%>
+    <article id="next_school">
+      <h2><%= link_to @school.title, next_path %></h2>
+      <h3><%= @school.theme %></h3>
+      <p class='school_when_where'><%= @school.when_and_where %></p>
+    </article>
+  <% else -%>
+    <h2>No school registered in database, yet.</h2>
+  <% end -%>
 </section>
