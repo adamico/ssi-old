@@ -1,5 +1,4 @@
 ::Refinery::Application.routes.draw do
-  get "/registration" => "schools#registration"
   get "/next" => "schools#next"
 
   resources :schools, :only => [:index, :show]

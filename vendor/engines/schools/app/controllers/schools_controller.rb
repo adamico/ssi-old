@@ -8,11 +8,6 @@ class SchoolsController < ApplicationController
     present(@page)
   end
 
-  def registration
-    @school = School.next
-    present(@page)
-  end
-
   def next
     @school = School.next
     if @school
