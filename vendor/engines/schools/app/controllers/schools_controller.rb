@@ -10,6 +10,7 @@ class SchoolsController < ApplicationController
 
   def next
     @school = School.next
+    @location = @school.to_gmaps4rails
     if @school
       events = @school.events
       @events_days = events.group_by { |event| event.when.beginning_of_day }

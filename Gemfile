@@ -64,6 +64,7 @@ end
 gem 'refinerycms-i18n',         '~> 1.0.0'
 gem 'state_machine'
 gem 'thin'
+gem 'gmaps4rails'
 
 # END USER DEFINED
 

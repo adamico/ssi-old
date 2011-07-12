@@ -1,11 +1,16 @@
 class School < ActiveRecord::Base
   acts_as_indexed :fields => [:title, :place, :location, :extranight, :theme, :sub_theme, :organiser, :sub_organiser, :award, :intro_program, :publication, :state]
-  #TODO: add fields for geocoder
   #TODO: add pdf export for programmed events and registration form
   validates :title, :presence => true, :uniqueness => true
 
   belongs_to :vignlieu, :class_name => 'Image'
   has_many :events, :dependent => :destroy
+
+  acts_as_gmappable
+
+  def gmaps4rails_address
+    location
+  end
 
   def self.previous
     all.reject {|school| school === School.next}

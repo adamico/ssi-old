@@ -2,6 +2,8 @@
   <%= javascript_include_tag 'jquery-min', 'jquery-ui-custom-min', 'programme_tabs' %>
 <% end %>
 
+<%= yield :scripts %>
+
 <% content_for :stylesheets do -%>
   <%= stylesheet_link_tag 'jquery-ui' %>
 <% end -%>
@@ -22,6 +24,9 @@
     </section>
     <section>
       <p><%= @school.place %> - <%= @school.period %></p>
+    </section>
+    <section>
+      <%= gmaps4rails(@location) %>
     </section>
     <section>
       <p><%= @school.organiser %></p>
