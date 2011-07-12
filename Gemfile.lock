@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:adamico/Google-Maps-for-Rails.git
+  remote: https://github.com/adamico/Google-Maps-for-Rails.git
   revision: 14e1b2a3c606c90b0c7658988dad965a54a3a6ab
   specs:
     gmaps4rails (0.9.1)
