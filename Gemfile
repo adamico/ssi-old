@@ -64,7 +64,7 @@ end
 gem 'refinerycms-i18n',         '~> 1.0.0'
 gem 'state_machine'
 gem 'thin'
-gem 'gmaps4rails'
+gem 'gmaps4rails', :git => "git@github.com:adamico/Google-Maps-for-Rails.git"
 
 # END USER DEFINED
 
