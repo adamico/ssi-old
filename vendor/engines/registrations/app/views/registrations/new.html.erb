@@ -87,7 +87,12 @@
         <div class='field'>
           <%= f.label :payment_id, "Payment by" %>
           <%= f.collection_select :payment_id, Payment.all, :id, :name %>
-        <%# Add captcha -%>
+        </div>
+        <% if Rails.env.development? %>
+          <%= recaptcha_tags :public_key => '6LcIDsYSAAAAAN3ZXvWWoYmPNCiGYhyPVtNvkrau' if Rails.env.development? %>
+        <% else %>
+          <%= recaptcha_tags %>
+        <% end -%>
         <div class='actions'>
           <%= f.submit t('registrations.new.send') %>
         </div>

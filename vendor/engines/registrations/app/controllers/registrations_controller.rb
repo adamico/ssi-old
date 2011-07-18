@@ -11,8 +11,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(params[:registration])
 
-    if @registration.save
-      #TODO: add Registration notification and confirmation with a mailer
+    if verify_recaptcha(:model => @registration) && @registration.save
       redirect_to thank_you_registrations_url
     else
       render 'new'
