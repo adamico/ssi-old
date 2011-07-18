@@ -1,9 +1,27 @@
+<% content_for :stylesheets do -%>
+  <%= stylesheet_link_tag 'registration' %>
+<% end -%>
 <% content_for :body_content_left do %>
   <div class='registrations'>
     <%=raw @page.content_for(Page.default_parts.first.to_sym) %>
 
     <% if @registration -%>
       <%# Add @school.deadline and other infos from old site-%>
+      <section>
+        <h4 class="title"><%= @school.title %></h4>
+        <h4 class="theme"><%= @school.theme %></h4>
+      </section>
+      <section>
+        <%= image_fu @school.vignlieu, "128x128" %>
+        <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=128x128&sensor=false&zoom=15&markers=#{@school.latitude}%2C#{@school.longitude}"), "http://maps.google.com/maps?q=#{@school.location}&z=14", :target => "_blank" %>
+      </section>
+      <section>
+        <p class="registration_fee"><b>REGISTRATION FEE : <%= @school.price.to_int.to_s %> €</b> <span class="price_without_vat">(<%= @school.price_without_vat %> € + VAT 19.6%)</span></p>
+        <p class="deadline">DEADLINE FOR REGISTRATION : <%= l @school.deadline, :format => :long %></span>
+      </section>
+      <section class="extranight">
+        <%= raw @school.extranight %>
+      </section>
       <%= form_for @registration do |f| %>
         <%= render :partial => "/shared/admin/error_messages",
                    :locals => {
@@ -67,18 +85,16 @@
           <%= f.text_field :accompagne %>
         </div>
         <div class='field'>
-          <%= f.label :payment_id, "Payment by:" %>
+          <%= f.label :payment_id, "Payment by" %>
           <%= f.collection_select :payment_id, Payment.all, :id, :name %>
         <%# Add captcha -%>
         <div class='actions'>
-          <%= f.submit t('.send') %>
-          <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if RefinerySetting.find_or_set(:show_contact_privacy_link, false) %>
+          <%= f.submit t('registrations.new.send') %>
         </div>
       <% end %>
     <% else -%>
-      <h2>Registrations are closed.</h2>
+      <h3>Registrations are closed.</h2>
     <% end -%>
   </div>
 <% end %>
 <%= render :partial => "/shared/content_page" %>
-

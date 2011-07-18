@@ -42,5 +42,7 @@ en:
     show:
       other: Other Payments
   registrations:
+    new:
+      send: Submit
     show:
       other: Other Registrations

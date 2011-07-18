@@ -1,0 +1,38 @@
+#programme {
+  font-size: 0.8em
+}
+
+.line {
+  clear: both;
+}
+
+.event {
+  float: left;
+}
+
+.when {
+  color: #4689B5;
+  margin-right: 5px;
+}
+
+.when:after {
+  content: " -";
+}
+
+.title_and_speaker {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  width: 800px;
+  font-weight: bold;
+}
+
+.speaker:before {
+  content: ": ";
+}
+
+.speaker {
+  font-style: italic;
+}

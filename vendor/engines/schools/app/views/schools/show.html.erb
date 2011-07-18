@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :stylesheets do -%>
-  <%= stylesheet_link_tag 'jquery-ui' %>
+  <%= stylesheet_link_tag 'jquery-ui', 'school' %>
 <% end -%>
 
 <% if @school -%>
@@ -22,9 +22,6 @@
     </section>
     <section>
       <p><%= @school.place %> - <%= @school.period %></p>
-    </section>
-    <section>
-    <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=15&markers=#{@school.latitude}%2C#{@school.longitude}"), "http://maps.google.com/maps?q=#{@school.location}&z=14", :target => "_blank" %>
     </section>
     <section>
       <p><%= @school.organiser %></p>
@@ -48,15 +45,19 @@
         </ul>
         <% @events_days.each do |day, events| -%>
           <div id="programme-<%= day.day %>">
-            <ul class="events">
+            <div class="events">
               <% events.each do |event| -%>
-                <li>
-                  <span class="event_when"><%= event.time %></span>
-                   - 
-                  <span class="event title"><%= event.title %></span>
-                   : 
-                  <span class="event speaker"><%= event.speaker %></span>
-                </li>
+                <div class="line">
+                  <div class="event when"><%= event.time %></div>
+                  <div class="event title">
+                    <p class="title_and_speaker">
+                      <span class="title"><%= event.title %></span>
+                      <% unless event.speaker.blank? %>
+                        <span class="speaker"><%= event.speaker %>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
               <% end -%>
             </ul>
           </div>

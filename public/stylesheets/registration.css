@@ -1,0 +1,45 @@
+h4.theme, h4.title {
+  margin: 0;
+}
+
+h4.theme {
+  color: #4689B5;
+}
+
+p.registration_fee, p.deadline {
+  margin: 0;
+}
+
+.price_without_vat {
+  font-size: 0.8em;
+}
+
+p.deadline {
+  color: #D66C0E;
+  font-weight: bold;
+}
+
+.extranight, form.new_registration {
+  font-size: 0.8em;
+}
+
+form.new_registration label {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  text-align: right;
+  width: 120px;
+}
+
+form.new_registration label:after {
+  content: ":"
+}
+
+input#registration_submit {
+  background: #4689B5;
+  border: 2px outset #D66C0E;
+  color: #D66C0E;
+  cursor: pointer;
+  margin-left: 130px;
+  padding: .2em .5em;
+}
