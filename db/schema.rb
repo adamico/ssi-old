@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110718125135) do
+ActiveRecord::Schema.define(:version => 20110712143224) do
 
   create_table "events", :force => true do |t|
     t.string    "title"
@@ -114,33 +114,32 @@ ActiveRecord::Schema.define(:version => 20110718125135) do
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
 
   create_table "registrations", :force => true do |t|
-    t.string    "surname"
-    t.string    "first_name"
-    t.string    "title"
-    t.string    "company"
-    t.string    "address"
-    t.string    "city"
-    t.string    "zip"
-    t.string    "country"
-    t.string    "phone"
-    t.string    "fax"
-    t.string    "email"
-    t.date      "arrival"
-    t.date      "departure"
-    t.string    "accompagne"
-    t.string    "ip"
-    t.integer   "payment_id"
-    t.string    "transaction_string"
-    t.integer   "status"
-    t.integer   "amount"
-    t.string    "transmission_date"
-    t.string    "payement_date"
-    t.string    "payement_time"
-    t.timestamp "date_cb"
-    t.integer   "position"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "school_id"
+    t.string   "surname"
+    t.string   "first_name"
+    t.string   "title"
+    t.string   "company"
+    t.string   "address"
+    t.string   "city"
+    t.string   "zip"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.date     "arrival"
+    t.date     "departure"
+    t.string   "accompagne"
+    t.string   "ip"
+    t.integer  "payment_id"
+    t.string   "transaction_string"
+    t.integer  "status"
+    t.integer  "amount"
+    t.string   "transmission_date"
+    t.string   "payement_date"
+    t.string   "payement_time"
+    t.datetime "date_cb"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "registrations", ["id"], :name => "index_registrations_on_id"
