@@ -24,7 +24,7 @@
       <p><%= @school.place %> - <%= @school.period %></p>
     </section>
     <section>
-    <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@school.latitude}%2C#{@school.longitude}"), "http://maps.google.com/maps?q=#{@school.location}&z=14" %>
+    <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@school.latitude}%2C#{@school.longitude}"), "http://maps.google.com/maps?q=#{@school.location}&z=14", :target => "_blank" %>
     </section>
     <section>
       <p><%= @school.organiser %></p>
