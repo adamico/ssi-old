@@ -7,10 +7,7 @@
                   } %>
     </li>
   <% end %>
-  <li>
-    <%= link_to t('.create_new'), new_admin_registration_path,
-                 :class => "add_icon" %>
-  </li>
+
 <% if !searching? and Admin::RegistrationsController.sortable? and Registration.count > 1 %>
   <li>
     <%= link_to t('.reorder', :what => "Registrations"),
