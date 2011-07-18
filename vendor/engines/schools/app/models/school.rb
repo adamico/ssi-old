@@ -6,11 +6,8 @@ class School < ActiveRecord::Base
   belongs_to :vignlieu, :class_name => 'Image'
   has_many :events, :dependent => :destroy
 
-  acts_as_gmappable
-
-  def gmaps4rails_address
-    location
-  end
+  geocoded_by :location
+  after_validation :geocode, :if => :location_changed?
 
   def self.previous
     all.reject {|school| school === School.next}
