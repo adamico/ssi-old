@@ -17,24 +17,24 @@
 
   <% content_for :body_content_left do %>
     <section id="school_theme">
-      <p><%= @school.theme %></p>
-      <p><%= @school.sub_theme %></p>
+      <h3><%= @school.theme %></h2>
+      <%= @school.sub_theme %>
     </section>
     <section>
-      <p><%= @school.place %> - <%= @school.period %></p>
+    <span class="place"><%= @school.place %></span> - <%= @school.period %>
     </section>
     <section>
-      <p><%= @school.organiser %></p>
-      <p><%= @school.sub_organiser %></p>
+      <%= @school.organiser %>
+      <%= @school.sub_organiser %>
     </section>
     <section>
-      <p><%=raw @school.award %></p>
+      <%=raw @school.award %>
     </section>
     <section>
-      <p><%=raw @school.intro_program %></p>
+      <%=raw @school.intro_program %>
     </section>
     <section>
-      <p><%=raw @school.publication %></p>
+      <%=raw @school.publication %>
     </section>
     <section id="programme">
       <% if @events_days.any? -%>
@@ -66,7 +66,9 @@
         No programmed events yet.
       <% end -%>
     </section>
-    <p>Placeholder for print programme link</p>
+    <% if Rails.env.development? %>
+      <p id="print_program">Placeholder for print programme link</p>
+    <% end -%>
   <% end %>
 <% else -%>
   No next school found.

@@ -1,4 +1,6 @@
 #programme {
+  margin: 1em auto;
+  width: 900px;
   font-size: 0.8em
 }
 
@@ -35,4 +37,13 @@
 
 .speaker {
   font-style: italic;
+}
+
+.place {
+  font-style: italic;
+}
+
+#school_theme h3 {
+  color: #4689B5;
+  margin-bottom: 0;
 }

@@ -34,33 +34,12 @@ body {
   font: 13.34px helvetica,arial,freesans,clean,sans-serif;
 }
 
-header {
-  width: 964px; /* center_block + side_block * 2 */
-}
-
-div.side_block, div#center_block {
-  float: left;
-}
-
-div.side_block {
-  width: 132px;
-}
-
-div#center_block {
-  width: 700px;
-}
-
 h1#logo {
   margin: 0;
 }
 
-#menu, #page {
-  clear: both;
-}
-
 #menu {
   background: #4689B5;
-  width: 700px;
   z-index: 1000;
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
@@ -107,7 +86,7 @@ h1#logo {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 24px;
+  top: 23px;
   left: 0px;
   z-index: 10000000;
   width: 700px;
@@ -132,9 +111,31 @@ h1#logo {
 }
 
 #page {
-  margin: 0px 132px;
+  width: 950px;
 }
 
 #body_content {
-  padding-top: 10px;
+  background-image: url(../images/img-labo.jpg),url(../images/fd-img-labo.gif) ;
+  background-repeat: no-repeat,repeat-y;
+  background-position: top left, top left;
+  min-height: 284px;
+  padding-left: 284px;
+}
+
+#body_content_left {
+  float: left;
+}
+
+h1#body_content_title {
+  font-size: 1.5em;
+  color: #4689B5;
+  text-shadow: 1px 1px #666 ;
+  margin-bottom: 5px;
+}
+
+footer {
+  margin: 0;
+  padding-right: 100px;
+  background: #ECECEC; 
+  text-align: right;
 }
