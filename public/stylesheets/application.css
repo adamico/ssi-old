@@ -54,48 +54,87 @@ h1#logo {
   margin: 0;
 }
 
-nav#menu, #page {
+#menu, #page {
   clear: both;
 }
 
-nav#menu {
+#menu {
   background: #4689B5;
   width: 700px;
+  z-index: 1000;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 
-nav#menu > ul {
-  height: 30px;
-  /* round corners here */
-  padding: 10px 20px;
-  padding-bottom: 0;
+#menu li {
+  width: 150px;
+  display: block;
+}
+
+#menu > li.last {
+  margin-right: 0px;
   float: right;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
-.menu a {
+#menu li a {
+  text-align: center;
   text-decoration: none;
-}
-
-.menu li > a {
   font-weight: bold;
-  padding: 0 8px;
+  display: block;
+  padding: 4px 8px;
   color: black;
   text-shadow: 1px 1px 1px #ddd ;
 }
-.menu li.selected > a {
+
+#menu li.selected > a {
   color: white;
   text-shadow: 1px 1px 1px black ;
 }
 
-.menu li > ul {
+#menu > ul {
+  position: relative;
+}
+
+#menu > ul > li {
+  display: block;
+  z-index: 1001;
+  min-height: 20px;
+}
+
+#menu li > ul {
   background: #D66C0E;
-  padding-left: 10px;
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  z-index: 10000000;
+  width: 700px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#menu li ul > li {
+  margin: 0px auto;
+}
+
+#menu li:hover ul {
+  display: block;
+}
+
+#menu li ul li {
+  float: left;
+}
+
+#menu li ul li a {
+  font-size: 0.9em;
 }
 
 #page {
   margin: 0px 132px;
 }
 
+#body_content {
+  padding-top: 10px;
+}
