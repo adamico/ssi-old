@@ -2,6 +2,8 @@
   Override default refinery application CSS below.
   Formatting applies to all frontend.
 */
+
+/* move this to a separate file */
 span.add_events, span.state {
   text-align: right;
   line-height: 28px;
@@ -26,3 +28,74 @@ span.state form {
 span.state form label {
   display: inline;
 }
+/* cut here */
+
+body {
+  font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+}
+
+header {
+  width: 964px; /* center_block + side_block * 2 */
+}
+
+div.side_block, div#center_block {
+  float: left;
+}
+
+div.side_block {
+  width: 132px;
+}
+
+div#center_block {
+  width: 700px;
+}
+
+h1#logo {
+  margin: 0;
+}
+
+nav#menu, #page {
+  clear: both;
+}
+
+nav#menu {
+  background: #4689B5;
+  width: 700px;
+}
+
+nav#menu > ul {
+  height: 30px;
+  /* round corners here */
+  padding: 10px 20px;
+  padding-bottom: 0;
+  float: right;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.menu li > a {
+  font-weight: bold;
+  padding: 0 8px;
+  color: black;
+  text-shadow: 1px 1px 1px #ddd ;
+}
+.menu li.selected > a {
+  color: white;
+  text-shadow: 1px 1px 1px black ;
+}
+
+.menu li > ul {
+  background: #D66C0E;
+  padding-left: 10px;
+}
+
+#page {
+  margin: 0px 132px;
+}
+
