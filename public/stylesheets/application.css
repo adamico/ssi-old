@@ -11,6 +11,16 @@ body {
   font: 13.34px helvetica,arial,freesans,clean,sans-serif;
 }
 
+body.index {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: Verdana;
+  line-height: 1.5em;
+  background: #303030 url('/images/refinery/page_bg.png') repeat;
+}
+
 #page {
   clear: both;
 }
@@ -19,6 +29,11 @@ body {
 header {
   width: 1269px;
 }
+
+body.index header {
+  width: 990px;
+}
+
 
 .side_block, #center_block {
   float: left
@@ -37,7 +52,7 @@ h1#logo {
 
 /* nav menu */
 
-#menu {
+#center_block #menu {
   font-size: 1.1em;
   background: rgba(70, 137, 181, 0.8);
   z-index: 1000;
@@ -46,18 +61,18 @@ h1#logo {
   border-bottom: 1px solid rgba(50, 137, 181, 1);
 }
 
-#menu > ul {
+#center_block #menu > ul {
   padding: 10px 10px 0 10px;
   min-height: 20px;
   position: relative;
 }
 
-#menu li {
+#center_block #menu li {
   width: 150px;
   display: block;
 }
 
-#menu li a {
+#center_block #menu li a {
   text-align: center;
   text-decoration: none;
   font-weight: bold;
@@ -67,7 +82,7 @@ h1#logo {
   text-shadow: 1px 1px 1px white;
 }
 
-#menu > ul > li > a:hover {
+#center_block #menu > ul > li > a:hover {
   color: black;
   text-shadow: 1px 1px 1px #ddd ;
   background: rgba(70, 137, 181, 1);
@@ -75,18 +90,18 @@ h1#logo {
   border-radius: 5px 5px 0 0;
 }
 
-#menu li.selected > a {
+#center_block #menu li.selected > a {
   color: white;
   text-shadow: 1px 1px 1px black ;
 }
 
-#menu > ul > li {
+#center_block #menu > ul > li {
   display: block;
   z-index: 1001;
   min-height: 20px;
 }
 
-#menu li > ul {
+#center_block #menu li > ul {
   display: none; /* this is initialy none and turn to block when hover */
   margin: 0;
   padding: 0 20px 0 20px;
@@ -97,22 +112,22 @@ h1#logo {
   width: 950px;
 }
 
-#menu li ul > li {
+#center_block #menu li ul > li {
   margin: 0px auto;
 }
 
-#menu li > ul > li > a {
+#center_block #menu li > ul > li > a {
   font-size: 0.9em;
 }
 
-#menu li > ul > li > a:hover {
+#center_block #menu li > ul > li > a:hover {
   color: white;
   text-shadow: 1px 1px 1px #333;
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
 
-#menu li:hover ul {
+#center_block #menu li:hover ul {
   display: block;
 }
 
