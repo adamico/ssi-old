@@ -12,6 +12,7 @@ section.home {
   float: right;
   width: 310px;
   margin-right: 20px;
+  text-shadow: 0px 1px 1px white;
 }
 
 #next_school a {
