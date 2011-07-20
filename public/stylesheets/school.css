@@ -1,7 +1,7 @@
 #programme {
   margin: 1em ;
   width: 680px;
-  font-size: 0.8em
+  font-size: 0.9em
 }
 
 .line {
@@ -46,4 +46,8 @@
 #school_theme h3 {
   color: #4689B5;
   margin-bottom: 0;
+}
+
+.ui-widget-header {
+  background: rgba(214,108,14,0.6);
 }

@@ -3,48 +3,47 @@
   Formatting applies to all frontend.
 */
 
-/* move this to a separate file */
-span.add_events, span.state {
-  text-align: right;
-  line-height: 28px;
-}
-
-span.add_events {
-  position: absolute;
-  top: 3px;
-  right: 120px;
-}
-
-span.state {
-  position: absolute;
-  top: 3px;
-  right: 240px;
-}
-
-span.state form {
-  display: inline;
-}
-
-span.state form label {
-  display: inline;
-}
-/* cut here */
-
 body {
+  background: #DAE1F0;
+  background-image: url(/images/fd-degrade.gif);
+  background-position: top left;
+  background-repeat: repeat-x;
   font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+}
+
+#page {
+  clear: both;
+}
+
+/* header */
+header {
+  width: 1269px;
+}
+
+.side_block, #center_block {
+  float: left
+}
+
+#center_block {
+  background: white;
+  width: 1000px;
 }
 
 h1#logo {
   margin: 0;
 }
 
+/* end header */
+
 /* nav menu */
 
 #menu {
+  font-size: 1.1em;
   background: rgba(70, 137, 181, 0.8);
   z-index: 1000;
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid rgba(50, 137, 181, 1);
 }
 
 #menu > ul {
@@ -125,18 +124,21 @@ h1#logo {
   width: 1000px;
   min-height: 22px;
   background: #D66C0E;
+  border-bottom: 1px solid white;
 }
 
 #body_content {
+  background: #F0F0F0;
   background-image: url(/images/img-labo.jpg),url(/images/bas-degrade-int.jpg),url(/images/fd-img-labo.gif) ;
   background-repeat: no-repeat,no-repeat,repeat-y;
   background-position: top left,bottom left,top left;
   min-height: 284px;
-  padding-left: 284px;
+  padding-left: 264px;
 }
 
 #body_content_left {
   float: left;
+  padding-bottom: 40px;
 }
 
 h1#body_content_title {
@@ -151,11 +153,12 @@ h1#body_content_title {
 footer {
   width: 1000px;
   margin: 0 auto;
-  background: #ECECEC; 
+  background: white; 
   overflow: auto;
 }
 
 footer p {
   float: right;
   text-align: right;
+  margin-right: 20px;
 }
