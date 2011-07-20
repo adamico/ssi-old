@@ -1,10 +1,11 @@
 #programme {
-  margin: 1em auto;
-  width: 900px;
+  margin: 1em ;
+  width: 680px;
   font-size: 0.8em
 }
 
 .line {
+  width: 650px;
   clear: both;
 }
 
@@ -14,20 +15,19 @@
 
 .when {
   color: #4689B5;
-  margin-right: 5px;
 }
 
-.when:after {
-  content: " -";
+.gutter {
+  margin: 0 5px;
 }
 
 .title_and_speaker {
+  width: 600px;
   margin: 0;
   padding: 0;
 }
 
 .title {
-  width: 800px;
   font-weight: bold;
 }
 

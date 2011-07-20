@@ -38,11 +38,19 @@ h1#logo {
   margin: 0;
 }
 
+/* nav menu */
+
 #menu {
-  background: #4689B5;
+  background: rgba(70, 137, 181, 0.8);
   z-index: 1000;
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
+}
+
+#menu > ul {
+  padding: 10px 10px 0 10px;
+  min-height: 20px;
+  position: relative;
 }
 
 #menu li {
@@ -50,28 +58,27 @@ h1#logo {
   display: block;
 }
 
-#menu > li.last {
-  margin-right: 0px;
-  float: right;
-}
-
 #menu li a {
   text-align: center;
   text-decoration: none;
   font-weight: bold;
   display: block;
-  padding: 4px 8px;
+  padding: 4px 8px 0 8px;
+  color: #333;
+  text-shadow: 1px 1px 1px white;
+}
+
+#menu > ul > li > a:hover {
   color: black;
   text-shadow: 1px 1px 1px #ddd ;
+  background: rgba(70, 137, 181, 1);
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 
 #menu li.selected > a {
   color: white;
   text-shadow: 1px 1px 1px black ;
-}
-
-#menu > ul {
-  position: relative;
 }
 
 #menu > ul > li {
@@ -81,43 +88,49 @@ h1#logo {
 }
 
 #menu li > ul {
-  background: #D66C0E;
-  display: none;
+  display: none; /* this is initialy none and turn to block when hover */
   margin: 0;
-  padding: 0;
+  padding: 0 20px 0 20px;
   position: absolute;
-  top: 23px;
+  top: 30px;
   left: 0px;
   z-index: 10000000;
-  width: 700px;
-  -moz-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
+  width: 950px;
 }
 
 #menu li ul > li {
   margin: 0px auto;
 }
 
+#menu li > ul > li > a {
+  font-size: 0.9em;
+}
+
+#menu li > ul > li > a:hover {
+  color: white;
+  text-shadow: 1px 1px 1px #333;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+
 #menu li:hover ul {
   display: block;
 }
 
-#menu li ul li {
-  float: left;
-}
+/* end nav menu */
 
-#menu li ul li a {
-  font-size: 0.9em;
-}
-
-#page {
-  width: 950px;
+#top_gutter {
+  z-index: 1001;
+  margin: 0px auto;
+  width: 1000px;
+  min-height: 22px;
+  background: #D66C0E;
 }
 
 #body_content {
-  background-image: url(../images/img-labo.jpg),url(../images/fd-img-labo.gif) ;
-  background-repeat: no-repeat,repeat-y;
-  background-position: top left, top left;
+  background-image: url(/images/img-labo.jpg),url(/images/bas-degrade-int.jpg),url(/images/fd-img-labo.gif) ;
+  background-repeat: no-repeat,no-repeat,repeat-y;
+  background-position: top left,bottom left,top left;
   min-height: 284px;
   padding-left: 284px;
 }
@@ -127,15 +140,22 @@ h1#logo {
 }
 
 h1#body_content_title {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  padding-top: 20px;
   font-size: 1.5em;
   color: #4689B5;
   text-shadow: 1px 1px #666 ;
-  margin-bottom: 5px;
 }
 
 footer {
-  margin: 0;
-  padding-right: 100px;
+  width: 1000px;
+  margin: 0 auto;
   background: #ECECEC; 
+  overflow: auto;
+}
+
+footer p {
+  float: right;
   text-align: right;
 }

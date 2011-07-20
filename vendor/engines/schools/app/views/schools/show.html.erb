@@ -49,17 +49,16 @@
               <% events.each do |event| -%>
                 <div class="line">
                   <div class="event when"><%= event.time %></div>
-                  <div class="event title">
-                    <p class="title_and_speaker">
-                      <span class="title"><%= event.title %></span>
-                      <% unless event.speaker.blank? %>
-                        <span class="speaker"><%= event.speaker %>
-                      <% end %>
-                    </p>
+                  <div class="event gutter"> - </div>
+                  <div class="event title_and_speaker">
+                    <span class="title"><%= event.title %></span>
+                    <% unless event.speaker.blank? %>
+                      <span class="speaker"><%= event.speaker %>
+                    <% end %>
                   </div>
-                </div>
+                </div><%#line%>
               <% end -%>
-            </ul>
+            </div>
           </div>
         <% end -%>
       <% else %>

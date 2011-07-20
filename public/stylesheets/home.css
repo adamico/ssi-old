@@ -4,14 +4,14 @@
 */
 
 section.home {
-  margin-top: 25px;
   background-image: url(../images/fnd-home.jpg);
-  height: 300px;
+  height: 329px;
 }
 
 #next_school {
   float: right;
-  width: 290px;
+  width: 310px;
+  margin-right: 20px;
 }
 
 #next_school a {

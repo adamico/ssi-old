@@ -9,13 +9,15 @@
       <header>
         <%= render :partial => "/shared/header" -%>
       </header>
+      <section id="top_gutter">
+      </section>
       <section id='page'>
         <%= yield %>
       </section>
+      <footer>
+        <%= render :partial => "/shared/footer" -%>
+      </footer>
     </div>
-    <footer>
-      <%= render :partial => "/shared/footer" -%>
-    </footer>
     <%= render :partial => "/shared/javascripts" %>
   </body>
 </html>
