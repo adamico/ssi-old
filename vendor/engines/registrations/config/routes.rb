@@ -1,19 +1,13 @@
 ::Refinery::Application.routes.draw do
   get '/registration', :to => 'registrations#new', :as => 'new_registration'
+  get '/thank_you' => "registrations#thank_you"
 
-  resources :registration,
-            :only => :create,
-            :as => :registrations,
-            :controller => 'registrations' do
-    collection do
-      get :thank_you
-    end
-  end
+  resources :registrations,
+            :only => :create
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     resources :registrations, :only => [:index, :show, :destroy]
   end
-  resources :payments, :only => [:index, :show]
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     resources :payments, :except => :show do

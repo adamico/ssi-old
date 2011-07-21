@@ -1,0 +1,7 @@
+<% content_for :body_content_left do %>
+  <p>Thank you for registering, Dear <strong><%= @registration.title_with_name %></strong>.</p>
+  <p>This registration has been filed with the <strong>number #<%= @registration.id %></strong>.</p>
+  <%= raw @page.parts.first.body %>
+<% end -%>
+
+<%= render :partial => "/shared/content_page" %>

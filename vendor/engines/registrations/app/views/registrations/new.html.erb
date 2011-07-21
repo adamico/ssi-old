@@ -6,7 +6,6 @@
     <%=raw @page.content_for(Page.default_parts.first.to_sym) %>
 
     <% if @registration -%>
-      <%# Add @school.deadline and other infos from old site-%>
       <section>
         <h4 class="title"><%= @school.title %></h4>
         <h4 class="theme"><%= @school.theme %></h4>

@@ -1,7 +1,7 @@
 <section class="home">
   <% if @school -%>
     <article id="next_school">
-      <h3><%= link_to @school.title, next_path %></h2>
+      <h3><%= link_to @school.title, program_path %></h2>
       <h2><%= @school.theme %></h3>
       <p class='school_when_where'>
         <%= @school.when_and_where %>

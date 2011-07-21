@@ -1,5 +1,6 @@
 ::Refinery::Application.routes.draw do
-  get "/next" => "schools#next"
+  get "/program" => "schools#next"
+  get "/previous" => "schools#index"
 
   resources :schools, :only => [:index, :show]
   resources :events, :only => [:index, :show]
