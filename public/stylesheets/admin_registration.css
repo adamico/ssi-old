@@ -1,0 +1,8 @@
+.registration_date, .registration_title, .registration_payment {
+  float: left;
+}
+
+.registration_title {
+  width: 16em;
+  margin-left: 1em;
+}

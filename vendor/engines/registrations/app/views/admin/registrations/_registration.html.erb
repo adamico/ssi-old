@@ -1,7 +1,11 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(registration) -%>">
-  <span class='title'>
-    <%= registration.surname %>
+  <span class="registration_date"><%= l registration.created_at, :format => :long %></span>
+  <span class='registration_title'>
+    <%= registration.title_with_name %>
     <span class="preview">&nbsp;</span>
+  </span>
+  <span class="registration_payment">
+    <%= registration.payment_name %>
   </span>
   <span class='actions'>
     <%= link_to refinery_icon_tag("delete.png"), admin_registration_path(registration),
