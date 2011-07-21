@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
   end
 
   def new
-    @registration = Registration.new(:school_id => @school.id) if @school
+    @registration = Registration.new(:school_id => @school.id, :amount => @school.price) if @school
   end
 
   def create
@@ -16,7 +16,7 @@ class RegistrationsController < ApplicationController
 
     if @registration.save
       #TODO: add branch for online transfer with sips/atos module
-      #TODO: add mailer stuff
+      RegistrationMailer.registration_confirmation(@registration).deliver
       @page = Page.find_by_link_url("/thank_you", :include => [:parts, :slugs])
       render 'thank_you'
     else

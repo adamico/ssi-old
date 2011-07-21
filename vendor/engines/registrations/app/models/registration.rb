@@ -13,6 +13,7 @@ class Registration < ActiveRecord::Base
   belongs_to :school
 
   delegate :name, :to => :payment, :prefix => true, :allow_nil => true
+  delegate :title, :to => :school, :prefix => true
 
   def title_with_name
     [self.try(:title), first_name, surname].join(" ")
