@@ -14,7 +14,7 @@ class School < ActiveRecord::Base
   end
 
   def self.next
-    with_state(:active)
+    with_state(:active).first
   end
 
   def price_without_vat

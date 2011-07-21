@@ -31,6 +31,6 @@ class RegistrationsController < ApplicationController
   end
 
   def find_school
-    @school = School.try(:next).first
+    @school = School.try(:next)
   end
 end
