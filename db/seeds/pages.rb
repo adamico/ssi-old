@@ -71,7 +71,7 @@ next_school_page.parts.create({
 next_school_page_position = -1
 
 program_page = next_school_page.children.create(:title => "Program",
-        :deleletable => false,
+        :deletable => false,
         :link_url => "/next",
         :position => (next_school_page_position += 1))
 program_page.parts.create({
@@ -80,8 +80,9 @@ program_page.parts.create({
               :position => 0
             })
 
-registration_form_page = next_school_page.children.create(:title => "Registration Form",
-        :deleletable => false,
+registration_form_page = next_school_page.children.create(
+        :title => "Registration Form",
+        :deletable => false,
         :link_url => "/registration",
         :position => (next_school_page_position += 1))
 registration_form_page.parts.create({
