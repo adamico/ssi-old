@@ -47,6 +47,7 @@ group :development, :test do
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
   # Finally, run 'rake' to run the tests.
   gem 'refinerycms-testing',    '~> 1.0.1'
+  gem 'spork', '0.9.0.rc9'
 end
 
 # END REFINERY CMS ============================================================
@@ -65,14 +66,9 @@ gem 'refinerycms-i18n',         '~> 1.0.0'
 gem 'state_machine'
 gem 'thin'
 gem 'geocoder'
-gem 'recaptcha', :require => "recaptcha/rails"
+gem 'humanizer'
 
 # END USER DEFINED
 
 gem 'refinerycms-schools', '1.0', :path => 'vendor/engines'
-
-gem 'refinerycms-schools', '1.0', :path => 'vendor/engines'
-
 gem 'refinerycms-registrations', '1.0', :path => 'vendor/engines'
-
-

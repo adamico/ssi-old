@@ -8,26 +8,19 @@ class RegistrationsController < ApplicationController
   end
 
   def new
-    @registration = Registration.new(:school_id => @school) if @school
+    @registration = Registration.new(:school_id => @school.id) if @school
   end
 
   def create
     @registration = Registration.new(params[:registration])
 
-    if Rails.env.development?
-      if @registration.save
-        @page = Page.find_by_link_url("/thank_you", :include => [:parts, :slugs])
-        render 'thank_you'
-      else
-        render 'new'
-      end
+    if @registration.save
+      #TODO: add branch for online transfer with sips/atos module
+      #TODO: add mailer stuff
+      @page = Page.find_by_link_url("/thank_you", :include => [:parts, :slugs])
+      render 'thank_you'
     else
-      if verify_recaptcha(:model => @registration) && @registration.save
-        #TODO: add mailer stuff
-        redirect_to thank_you_url
-      else
-        render 'new'
-      end
+      render 'new'
     end
   end
 
@@ -38,7 +31,6 @@ class RegistrationsController < ApplicationController
   end
 
   def find_school
-    next_school = School.next
-    @school = next_school.try(:active?) ? next_school : nil
+    @school = School.try(:next).first
   end
 end

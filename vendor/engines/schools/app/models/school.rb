@@ -14,7 +14,7 @@ class School < ActiveRecord::Base
   end
 
   def self.next
-    last
+    with_state(:active)
   end
 
   def price_without_vat
@@ -35,6 +35,7 @@ class School < ActiveRecord::Base
 
   # state machines
   ### default state machine 'state'
+  #TODO: add a cron task to close schools after deadline
 
   STATES = %w(draft announced active closed)
 
