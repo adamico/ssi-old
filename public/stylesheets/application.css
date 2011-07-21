@@ -21,22 +21,29 @@ body.index {
   background: #303030 url('/images/refinery/page_bg.png') repeat;
 }
 
+#page_container {
+  width: 1269px;
+}
+
+.side_column, #center_column {
+  float: left
+}
+
 #page {
   clear: both;
 }
 
 /* header */
 header {
-  width: 1269px;
+  width: 1000px;
 }
 
 body.index header {
   width: 990px;
 }
 
-
-.side_block, #center_block {
-  float: left
+body.index #page_container {
+  width: 960px;
 }
 
 #center_block {
@@ -133,7 +140,7 @@ h1#logo {
 
 /* end nav menu */
 
-#top_gutter {
+#gutter {
   z-index: 1001;
   margin: 0px auto;
   width: 1000px;
