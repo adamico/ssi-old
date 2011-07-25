@@ -11,12 +11,12 @@
 
   <div class='field'>
     <%= f.label :starts_at -%>
-    <%= f.date_select :starts_at  -%>
+    <%= f.date_select :starts_at, :start_year => Time.new.year - 20 -%>
   </div>
 
   <div class='field'>
     <%= f.label :ends_at -%>
-    <%= f.date_select :ends_at  -%>
+    <%= f.date_select :ends_at, :start_year => Time.new.year - 20  -%>
   </div>
 
   <div class='field'>
