@@ -30,7 +30,7 @@ class SchoolsController < ApplicationController
 protected
 
   def find_previous_schools
-    @schools = School.previous.paginate(:page => params[:page], :per_page => 4)
+    @schools = School.order("starts_at DESC").previous.paginate(:page => params[:page], :per_page => 4)
   end
 
   def find_page
