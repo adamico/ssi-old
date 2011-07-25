@@ -1,10 +1,11 @@
-<div id="center_block">
-  <h1 id='logo'>
-    <%= link_to image_tag("logo_school_immunotoxicology.jpg"), root_path %>
-  </h1>
-  <%= render(:partial => "/shared/menu", :locals => {
-               :dom_id => 'menu',
-               :css => 'menu'
-             }) %>
-  <div id="gutter"></div>
-</div>
+<a class="logo" href="/">
+  <%= image_tag("logo.png", :alt => "Summerschool In Immunotoxicology", :class => "default") %>
+  <!--[if (gt IE 8)|!(IE)]><!-->
+  <%= image_tag("logo-hover.png", :alt => "Summerschool In Immunotoxicology", :class => "hover") %>
+  <!--<![endif]-->
+</a>
+<%= render(:partial => "/shared/menu", :locals => {
+             :dom_id => 'menu',
+             :css => 'menu'
+           }) %>
+<div id="gutter"></div>

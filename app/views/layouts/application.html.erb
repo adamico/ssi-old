@@ -6,23 +6,15 @@
     <%= site_bar -%>
     <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
     <div id="page_container">
-      <div class="side_column">
-        <%= image_tag("bord-haut-gauche.gif") %>
-      </div>
-      <div id="center_column">
-        <header>
-          <%= render :partial => "/shared/header" -%>
-        </header>
-        <section id='page'>
-          <%= yield %>
-        </section>
-        <footer>
-          <%= render :partial => "/shared/footer" -%>
-        </footer>
-      </div>
-      <div class="side_column">
-        <%= image_tag("bord-haut-droite.gif") %>
-      </div>
+      <header>
+        <%= render :partial => "/shared/header" -%>
+      </header>
+      <section id='page'>
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render :partial => "/shared/footer" -%>
+      </footer>
     </div>
     <%= render :partial => "/shared/javascripts" %>
   </body>
