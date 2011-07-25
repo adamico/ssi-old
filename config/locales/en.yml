@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  refinery:
+    site_bar:
+      logged_in: 'Logged in as '
