@@ -85,13 +85,14 @@ body.index #menu {
 
 #menu {
   position: relative;
-  top: 62px;
+  top: 65px;
   left: 0px;
   font-size: 1.1em;
   background: rgba(70, 137, 181, 0.8);
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
-  border-bottom: 1px solid rgba(50, 137, 181, 1);
+  border: 1px solid rgba(50, 137, 181, 1);
+  border-bottom: 0;
 }
 
 #menu > ul {
@@ -168,7 +169,7 @@ body.index #menu {
 #gutter {
   position: relative;
   z-index: 1000;
-  top: 62px;
+  top: 67px;
   left: 0px;
   margin: 0px auto;
   width: 1000px;
