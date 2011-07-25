@@ -4,4 +4,8 @@ class Link < ActiveRecord::Base
 
   validates :title, :presence => true, :uniqueness => true
   belongs_to :link_category
+
+  def self.uncategorized
+    Link.where(:link_category_id => nil)
+  end
 end

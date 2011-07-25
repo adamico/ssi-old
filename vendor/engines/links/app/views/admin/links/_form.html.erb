@@ -3,22 +3,22 @@
           :object => @link,
           :include_object_name => true
         } %>
-  
+
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest'  -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :url -%>
     <%= f.text_field :url  -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :link_category_id -%>
-    <%= f.collection_select :link_category_id, @link_categories, :id, :title -%>
+    <%= f.collection_select :link_category_id, @link_categories, :id, :title, {:include_blank => true} -%>
   </div>
-  
+
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,
