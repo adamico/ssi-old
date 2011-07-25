@@ -1,6 +1,7 @@
 PATH
   remote: vendor/engines
   specs:
+    refinerycms-links (1.0)
     refinerycms-registrations (1.0)
     refinerycms-schools (1.0)
 
@@ -262,6 +263,7 @@ DEPENDENCIES
   pg
   refinerycms (~> 1.0.3)
   refinerycms-i18n (~> 1.0.0)
+  refinerycms-links (= 1.0)!
   refinerycms-news (~> 1.2)
   refinerycms-registrations (= 1.0)!
   refinerycms-schools (= 1.0)!

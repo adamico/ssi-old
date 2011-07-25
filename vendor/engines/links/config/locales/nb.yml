@@ -1,0 +1,44 @@
+---
+nb:
+  plugins:
+    link_categories:
+      title: Link Categories
+    links:
+      title: Links
+  admin:
+    link_categories:
+      actions:
+        create_new: Lag en ny Link Category
+        reorder: Endre rekkefølgen på Link Categories
+        reorder_done: Ferdig å endre rekkefølgen Link Categories
+      records:
+        title: Link Categories
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Link Categories enda. Klikk på "Lag en ny Link
+          Category" for å legge til din første link category.
+      link_category:
+        view_live_html: Vis hvordan denne link category ser ut offentlig <br/><em>(åpner
+          i et nytt vindu)</em>
+        edit: Rediger denne link category
+        delete: Fjern denne link category permanent
+    links:
+      actions:
+        create_new: Lag en ny Link
+        reorder: Endre rekkefølgen på Links
+        reorder_done: Ferdig å endre rekkefølgen Links
+      records:
+        title: Links
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Links enda. Klikk på "Lag en ny Link" for å legge
+          til din første link.
+      link:
+        view_live_html: Vis hvordan denne link ser ut offentlig <br/><em>(åpner i
+          et nytt vindu)</em>
+        edit: Rediger denne link
+        delete: Fjern denne link permanent
+  link_categories:
+    show:
+      other: Andre Link Categories
+  links:
+    show:
+      other: Andre Links

@@ -1,0 +1,30 @@
+<% content_for :javascript_libraries do %>
+  <%= javascript_include_tag 'jquery-min', 'jquery-ui-custom-min', 'links' %>
+<% end %>
+
+<% content_for :stylesheets do -%>
+  <%= stylesheet_link_tag 'links' %>
+<% end -%>
+
+<% content_for :body_content_title do -%>
+  Links
+<% end -%>
+
+<% content_for :body_content_left do %>
+  <div id="link_categories">
+    <% @link_categories.each do |link_category| %>
+      <div class="link_category" id="<%= link_category.id%>">
+        <div class="title"><%= link_category.title %></div>
+          <div class="links">
+            <% link_category.links.each do |link| -%>
+              <div class="link">
+                <%= link_to link.title, link.url, :target => "_blank" %>
+              </div>
+            <% end -%>
+          </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
