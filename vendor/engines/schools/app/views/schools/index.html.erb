@@ -1,10 +1,25 @@
+<% content_for :body_content_title do -%>
+  Previous Schools
+<% end -%>
+
+<% content_for :stylesheets do -%>
+  <%= stylesheet_link_tag 'school' %>
+<% end -%>
+
 <% content_for :body_content_left do %>
+  <%= raw @page[:body] %>
   <% if @schools.any? -%>
-    <ul id="schools">
+    <div id="schools">
       <% @schools.each do |school| %>
-        <li><%= school.title %></li>
+        <div class="school">
+          <div class="title"><%= school.title %></div>
+          <div class="when_and_where"><%= school.when_and_where %></div>
+          <div class="theme"><%= school.theme %></div>
+          <div class="publications"><%= raw school.publication %></div>
+        </div>
       <% end %>
-    </ul>
+      <%= will_paginate @schools %>
+    </div>
   <% else -%>
     <p>No previous schools found</p>
   <% end -%>

@@ -22,7 +22,11 @@ class School < ActiveRecord::Base
   end
 
   def when_and_where
-    period + " (#{place})"
+    if cancelled?
+      "CANCELLED"
+    else
+      period + " (#{place})"
+    end
   end
 
   def period
@@ -37,7 +41,7 @@ class School < ActiveRecord::Base
   ### default state machine 'state'
   #TODO: add a cron task to close schools after deadline
 
-  STATES = %w(draft announced active closed)
+  STATES = %w(draft announced active closed cancelled)
 
   state_machine :initial => :draft do
     event :announce do
@@ -48,6 +52,9 @@ class School < ActiveRecord::Base
     end
     event :close do
       transition :active => :closed
+    end
+    event :cancel do
+      transition all - [:cancelled] => :cancelled
     end
   end
 end

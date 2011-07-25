@@ -30,10 +30,10 @@ class SchoolsController < ApplicationController
 protected
 
   def find_previous_schools
-    @schools = School.previous
+    @schools = School.previous.paginate(:page => params[:page], :per_page => 1)
   end
 
   def find_page
-    @page = Page.where(:link_url => "/schools").first
+    @page = Page.where(:link_url => "/previous").first
   end
 end

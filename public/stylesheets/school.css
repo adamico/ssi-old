@@ -51,3 +51,42 @@
 .ui-widget-header {
   background: rgba(214,108,14,0.6);
 }
+
+.school {
+  background: white;
+  padding: 3px 0 3px 10px;
+  border: 1px solid #CCC;
+  margin-bottom: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 3px 3px 3px #CCC;
+  -webkit-box-shadow: 3px 3px 3px #CCC;
+  box-shadow: 3px 3px 3px #CCC;
+}
+
+.school .title {
+  color: #D66C0E;
+}
+
+.school .when_and_where, .school .publications {
+  font-weight: bold;
+}
+
+.school .theme {
+  margin-top: 1em;
+}
+
+#schools .pagination {
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
+}
+
+#schools .pagination a {
+  color: #4689B5;
+  text-decoration: none;
+}
+
+#schools .pagination a:hover {
+  text-decoration: underline;
+}
