@@ -27,9 +27,9 @@ SsImmunotox::Application.configure do
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :test
     paypal_options = {
-      :login => "merch_1311754660_biz_api1.gmail.com",
-      :password => "1311754703",
-      :signature => "A--zOOKkCWVw7YARI..B0dvmEtz3AnTl1MZhaKBC9qR6ng24J7vMtJca"
+      :login => "andrea_1311772828_biz_api1.gmail.com",
+      :password => "1311772894",
+      :signature => "ACqt1ImRBBJYb0Q87XGidrKc2tRKAEwyhnaiTWav-O8xCAAGZflnyTXZ"
     }
     ::STANDARD_GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(paypal_options)
     ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
