@@ -1,6 +1,7 @@
 <% content_for :stylesheets do -%>
   <%= stylesheet_link_tag 'registration' %>
 <% end -%>
+
 <% content_for :body_content_left do %>
   <div class='registrations'>
     <%=raw @page.content_for(Page.default_parts.first.to_sym) %>
@@ -10,7 +11,7 @@
         <h4 class="title"><%= @school.title %></h4>
         <h4 class="theme"><%= @school.theme %></h4>
       </section>
-      <section>
+      <section class="place_images">
         <%= image_fu @school.vignlieu, "128x128" %>
         <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=128x128&sensor=false&zoom=15&markers=#{@school.latitude}%2C#{@school.longitude}"), "http://maps.google.com/maps?q=#{@school.location}&z=14", :target => "_blank" %>
       </section>
@@ -93,6 +94,28 @@
         <div class='field'>
           <%= f.label :payment_id, "Payment by" %>
           <%= f.collection_select :payment_id, Payment.all, :id, :name %>
+        </div>
+        <div class='field' id="paypal_express">
+          <div class='field'>
+            <%= f.label :card_type, t('registration.card_type') %>
+            <%= f.select :card_type, Registration::CARD_TYPES %>
+          </div>
+          <div class='field'>
+            <%= f.label :card_number, t('registration.card_number') %>
+            <%= f.text_field :card_number %>
+          </div>
+          <div class='field'>
+            <%= f.label :card_verification, t('registration.card_verification') %>
+            <%= f.text_field :card_verification %>
+          </div>
+          <div class='field'>
+            <%= f.label :card_expires_on, t('registration.card_expires_on') %>
+            <%= f.date_select :card_expires_on, 
+              :discard_day => true, 
+              :start_year => Date.today.year, 
+              :end_year => (Date.today.year+10), 
+              :add_month_numbers => true %>
+          </div>
         </div>
         <div class='field'>
           <%= f.label :humanizer_answer, @registration.humanizer_question %>

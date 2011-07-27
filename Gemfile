@@ -67,6 +67,7 @@ gem 'state_machine'
 gem 'thin'
 gem 'geocoder'
 gem 'humanizer'
+gem 'activemerchant', :require => "active_merchant"
 
 # END USER DEFINED
 

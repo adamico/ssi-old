@@ -32,6 +32,13 @@ SsImmunotox::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Active Merchant
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    ::STANDARD_GATEWAY = ActiveMerchant::Billing::BogusGateway.new
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::BogusGateway.new
+  end
 end
 Refinery.rescue_not_found = false
 # When true will use Amazon's Simple Storage Service on your production machine

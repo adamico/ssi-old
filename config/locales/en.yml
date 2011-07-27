@@ -3,6 +3,11 @@
 
 en:
   hello: "Hello world"
+  registration:
+    card_type: Card Type
+    card_number: Card Number
+    card_verification: "Card Verification Value (CVV)"
+    card_expires_on: Card Expires On
   refinery:
     site_bar:
       logged_in: 'Logged in as '

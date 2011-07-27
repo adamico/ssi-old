@@ -9,7 +9,7 @@
   <% else %>
     <p>The credit card transaction was successful.</p>
   <% end -%>
-  <%= raw @page[:body] %>
+  <%= raw @page.content_for(:body) %>
 <% end -%>
 
 <%= render :partial => "/shared/content_page" %>

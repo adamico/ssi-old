@@ -46,6 +46,18 @@ SsImmunotox::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # for active merchant
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test #change to :production when live
+    paypal_options = {
+      :login => "merch_1311754660_biz_api1.gmail.com",
+      :password => "1311754703",
+      :signature => "A--zOOKkCWVw7YARI..B0dvmEtz3AnTl1MZhaKBC9qR6ng24J7vMtJca"
+    }
+    ::STANDARD_GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(paypal_options)
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+  end
 end
 Refinery.rescue_not_found = true
 # When true will use Amazon's Simple Storage Service on your production machine
