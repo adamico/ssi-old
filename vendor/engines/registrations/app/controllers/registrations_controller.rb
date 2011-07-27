@@ -12,16 +12,10 @@ class RegistrationsController < ApplicationController
     @registration.ip = request.remote_ip
 
     if @registration.save
-      #TODO: add branch for online transfer with sips/atos module
-      if @registration.online_transfer? 
-        if @registration.purchase
-          success
-        else
-          render 'failure'
-        end
-      else
-        #TODO: refactor this, ugly!
+      if @registration.purchase
         success
+      else
+        render 'failure'
       end
     else
       render 'new'

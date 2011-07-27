@@ -11,7 +11,7 @@ class Registration < ActiveRecord::Base
 
   validates :surname, :presence => true
 
-  validate :validate_card, :on => :create, :if => :online_transfer?
+  validate :validate_card, :on => :create
 
   belongs_to :payment
   belongs_to :school
@@ -21,7 +21,7 @@ class Registration < ActiveRecord::Base
   delegate :title, :to => :school, :prefix => true
 
   def purchase
-    response = GATEWAY.purchase(price_in_cents, credit_card, :ip => ip)
+    response = STANDARD_GATEWAY.purchase(price_in_cents, credit_card, :ip => ip)
     transactions.create!(
       :action => "purchase",
       :amount => price_in_cents,
