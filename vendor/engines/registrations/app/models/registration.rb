@@ -1,6 +1,15 @@
 class Registration < ActiveRecord::Base
   include Humanizer
   attr_accessor :bypass_humanizer
+  attr_accessor :formatted_arrival
+  attr_accessor :formatted_departure
+
+  def formatted_arrival
+    I18n.l(arrival) if arrival
+  end
+  def formatted_departure
+    I18n.l(departure) if departure
+  end
   if Rails.env.production?
     require_human_on :create, :unless => :bypass_humanizer
   end

@@ -1,5 +1,8 @@
+<% content_for :javascript_libraries do %>
+  <%= javascript_include_tag 'jquery-min', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js', 'registration' %>
+<% end %>
 <% content_for :stylesheets do -%>
-  <%= stylesheet_link_tag 'registration' %>
+  <%= stylesheet_link_tag 'jquery-ui', 'registration' %>
 <% end -%>
 <% content_for :body_content_left do %>
   <div class='registrations'>
@@ -82,12 +85,14 @@
           <%= f.text_field :email %>
         </div>
         <div class='field'>
-          <%= f.required_label :arrival %>
-          <%= f.date_select :arrival %>
+          <%= f.hidden_field :arrival %>
+          <%= f.required_label :formatted_arrival, "Arrival" %>
+          <%= f.text_field :formatted_arrival %>
         </div>
         <div class='field'>
-          <%= f.required_label :departure %>
-          <%= f.date_select :departure %>
+          <%= f.hidden_field :departure %>
+          <%= f.required_label :formatted_departure, "Departure" %>
+          <%= f.text_field :formatted_departure %>
         </div>
         <div class='field'>
           <%= f.label :accompagne, "Accompanying person" %>
