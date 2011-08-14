@@ -17,7 +17,7 @@
 
   <% content_for :body_content_left do %>
     <section id="school_theme">
-      <h3><%= @school.theme %></h2>
+      <h3><%= @school.theme %></h3>
       <%= @school.sub_theme %>
     </section>
     <section>
@@ -53,7 +53,7 @@
                   <div class="event title_and_speaker">
                     <span class="title"><%= event.title %></span>
                     <% unless event.speaker.blank? %>
-                      <span class="speaker"><%= event.speaker %>
+                      <span class="speaker"><%= event.speaker %></span>
                     <% end %>
                   </div>
                 </div><%#line%>
