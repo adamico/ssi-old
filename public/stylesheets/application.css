@@ -23,7 +23,7 @@ body.index {
 }
 
 /* header */
-header {
+header#page_header {
   margin: 0 auto;
   width: 1000px;
   height: 122px;
@@ -40,14 +40,14 @@ body.index #page_container {
   background: white;
 }
 
-header .logo {
+header#page_header .logo {
   display: block;
   position:relative;
   left: 0;
   top: 0;
 }
 
-header .logo img {
+header#page_header .logo img {
   position: absolute;
   top: 0;
   left: 0;
@@ -55,19 +55,19 @@ header .logo img {
   -moz-transition: opacity .25s linear;
 }
 
-header .logo img.hover {
+header#page_header .logo img.hover {
   opacity: 0;
 }
 
-header .logo:hover img.hover {
+header#page_header .logo:hover img.hover {
   opacity: 1;
 }
 
-header .logo img.default {
+header#page_header .logo img.default {
   opacity: 1;
 }
 
-header .logo:hover img.default {
+header#page_header .logo:hover img.default {
   opacity: 0;
 }
 
@@ -203,14 +203,14 @@ h1#body_content_title {
   text-shadow: 1px 1px #666 ;
 }
 
-footer {
+footer#page_footer {
   width: 1000px;
   margin: 0 auto;
   background: white; 
   overflow: auto;
 }
 
-footer p {
+footer#page_footer p {
   font-size: 0.7em;
   float: right;
   text-align: right;
