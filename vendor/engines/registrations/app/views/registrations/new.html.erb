@@ -42,7 +42,7 @@
         </div>
         <div class='field'>
           <%= f.required_label :surname %>
-          <%= f.text_field :surname %>
+          <%= f.text_field :surname, :autofocus => true %>
         </div>
         <div class='field'>
           <%= f.required_label :first_name %>
@@ -50,7 +50,7 @@
         </div>
         <div class='field'>
           <%= f.label :title %>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, :placeholder => "Mr, Ms, Mrs.." %>
         </div>
         <div class='field'>
           <%= f.required_label :company %>
@@ -74,29 +74,29 @@
         </div>
         <div class='field'>
           <%= f.required_label :phone %>
-          <%= f.text_field :phone %>
+          <%= f.text_field :phone, :type => "tel", :placeholder => "Eg. +33472116911" %>
         </div>
         <div class='field'>
           <%= f.label :fax %>
-          <%= f.text_field :fax %>
+          <%= f.text_field :fax, :type => "tel" %>
         </div>
         <div class='field'>
           <%= f.required_label :email %>
-          <%= f.text_field :email %>
+          <%= f.text_field :email, :type => "email", :placeholder => "me@example.com" %>
         </div>
         <div class='field'>
           <%= f.hidden_field :arrival %>
           <%= f.required_label :formatted_arrival, "Arrival" %>
-          <%= f.text_field :formatted_arrival %>
+          <%= f.text_field :formatted_arrival, :placeholder => "Date of arrival" %>
         </div>
         <div class='field'>
           <%= f.hidden_field :departure %>
           <%= f.required_label :formatted_departure, "Departure" %>
-          <%= f.text_field :formatted_departure %>
+          <%= f.text_field :formatted_departure, :placeholder => "Date of departure" %>
         </div>
         <div class='field'>
           <%= f.label :accompagne, "Accompanying person" %>
-          <%= f.text_field :accompagne %>
+          <%= f.text_field :accompagne, :placeholder => "Enter name if relevant" %>
         </div>
         <div class='field'>
           <%= f.label :payment_id, "Payment by" %>
@@ -104,7 +104,7 @@
         </div>
         <div class='field'>
           <%= f.label :humanizer_answer, @registration.humanizer_question %>
-          <%= f.text_field :humanizer_answer %>
+          <%= f.text_field :humanizer_answer, :placeholder => "Enter the answer here" %>
           <%= f.hidden_field :humanizer_question_id %>
         </div>
         <div class='actions'>
