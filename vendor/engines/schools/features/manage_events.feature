@@ -8,14 +8,14 @@ Feature: Events
     Given I am a logged in refinery user
     And I have no events
 
-  @events-list @list
+  @events-list @list @javascript
   Scenario: Events List
    Given I have events titled UniqueTitleOne, UniqueTitleTwo
    When I go to the list of events
    Then I should see "UniqueTitleOne"
    And I should see "UniqueTitleTwo"
 
-  @events-valid @valid
+  @events-valid @valid @javascript
   Scenario: Create Valid Event
     When I go to the list of events
     And I follow "Add New Event"
@@ -43,7 +43,7 @@ Feature: Events
     And I should be on the list of events
     And I should not see "A title"
 
-  @events-duplicate @duplicate
+  @events-duplicate @duplicate @javascript
   Scenario: Create Duplicate Event
     Given I only have events titled UniqueTitleOne, UniqueTitleTwo
     When I go to the list of events
