@@ -3,7 +3,8 @@ module Admin
     before_filter :find_all_schools,
                   :only => [:new, :edit, :create, :update]
 
-    crudify :event, :xhr_paging => true
+    crudify :event, :xhr_paging => true,
+            :sortable => false, :order => "when DESC"
 
     def new
       @event = Event.new(:school_id => params[:school])
