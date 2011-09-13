@@ -30,12 +30,14 @@ describe School do
   describe ".previous" do
     it "should list all schools but the current" do
       last_school = School.create(:title => "a title")
+      last_school.activate!
       School.previous.should_not include(last_school)
     end
   end
 
   describe ".next" do
     it "should return last school" do
+      @school.activate!
       School.next.should === @school
     end
   end

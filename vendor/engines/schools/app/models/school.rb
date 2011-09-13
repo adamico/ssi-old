@@ -47,7 +47,7 @@ class School < ActiveRecord::Base
     event :announce do
       transition :draft => :announced
     end
-    event :open do
+    event :activate do
       transition :announced => :active
     end
     event :close do
