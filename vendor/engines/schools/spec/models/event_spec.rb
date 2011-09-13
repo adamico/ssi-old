@@ -1,32 +1,17 @@
 require 'spec_helper'
 
 describe Event do
+  it {should_not be_valid}
 
-  def reset_event(options = {})
-    @valid_attributes = {
-      :id => 1,
-      :title => "RSpec is great for testing too"
-    }
-
-    @event.destroy! if @event
-    @event = Event.create!(@valid_attributes.update(options))
+  it "should require a title" do
+    subject.title = "value for title"
+    subject.should be_valid
   end
 
-  before(:each) do
-    reset_event
-  end
-
-  context "validations" do
-    
-    it "rejects empty title" do
-      Event.new(@valid_attributes.merge(:title => "")).should_not be_valid
-    end
-
-    it "rejects non unique title" do
-      # as one gets created before each spec by reset_event
-      Event.new(@valid_attributes).should_not be_valid
-    end
-    
+  it "should require a unique title" do
+    subject.title = "value for title"
+    subject.save!
+    Event.new(:title => subject.title).should_not be_valid
   end
 
 end
