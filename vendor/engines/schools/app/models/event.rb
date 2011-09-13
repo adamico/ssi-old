@@ -5,6 +5,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :school
 
+  delegate :title, :to => :school, :allow_nil => true
+
   def time
     self.when.strftime("%R")
   end
