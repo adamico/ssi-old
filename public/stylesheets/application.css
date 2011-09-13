@@ -211,8 +211,31 @@ footer#page_footer {
 }
 
 footer#page_footer p {
+  clear: both;
   font-size: 0.7em;
   float: right;
   text-align: right;
   margin-right: 20px;
+}
+
+#social {
+  width: 800px;
+  margin: auto;
+}
+
+#facebook, #twitter {
+  width: 320px;
+  text-align: center;
+}
+
+#facebook {
+  float: left;
+}
+
+#twitter {
+  float: right;
+}
+
+#social h4 {
+  margin: 0;
 }

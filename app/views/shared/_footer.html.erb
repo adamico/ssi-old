@@ -1,13 +1,14 @@
-<div id="fb-root"></div>
-<script>
-  (function(d){
-    var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-    js = d.createElement('script'); js.id = id; js.async = true;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    d.getElementsByTagName('head')[0].appendChild(js);
-  }(document));
-</script>
-<div class="fb-like-box" data-href="http://www.facebook.com/pages/Summerschool-In-Immunotoxicology/110997122340428" data-width="292" data-show-faces="false" data-stream="false" data-header="true"></div>
+<section id="social">
+  <div id="facebook">
+    <h4>Join us on Facebook</h4>
+    <a href="http://www.facebook.com/pages/Summerschool-In-Immunotoxicology/283717018308469">Link</a>
+  </div>
+  <div id="twitter">
+    <h4>Follow us on Twitter</h4>
+    <a href="http://twitter.com/{screen_name}" class="twitter-follow-button">Follow @immunotoxschool</a>
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+  </div>
+</section>
 <p>
   <%= t('.copyright', :year => Time.now.year,
                       :site_name => RefinerySetting.find_or_set(:site_name, "Company Name")) %>
