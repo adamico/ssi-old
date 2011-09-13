@@ -36,7 +36,7 @@ Feature: Link Categories
   Scenario: Edit Existing Link Category
     Given I have link_categories titled "A title"
     When I go to the list of link_categories
-    And I follow "Edit this link_category" within ".actions"
+    And I follow "Edit this link category" within ".actions"
     Then I fill in "Title" with "A different title"
     And I press "Save"
     Then I should see "'A different title' was successfully updated."
