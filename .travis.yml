@@ -1,5 +1,5 @@
-bundler_args: "--without production"
-before_script: "bundle exec rake db:migrate"
-script: "bundle exec rake"
+before_script: "sh -e /etc/init.d/xvfb start"
+script: "DISPLAY=:99.0 bundle exec rake db:create db:migrate spec cucumber"
 rvm:
   - 1.9.2
+  - 1.9.3
