@@ -22,11 +22,6 @@ describe Registration do
       Registration.new(@valid_attributes.merge(:surname => "")).should_not be_valid
     end
 
-    it "rejects non unique surname" do
-      # as one gets created before each spec by reset_registration
-      Registration.new(@valid_attributes).should_not be_valid
-    end
-    
   end
 
 end
