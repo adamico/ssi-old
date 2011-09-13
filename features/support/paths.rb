@@ -4,14 +4,16 @@ module NavigationHelpers
 
       def path_to(page_name)
         # Replace the nil below with the commented code to use this.
-        nil
+        # nil
 
-        #case page_name
+        case page_name
+        when /the registration/
+          new_registration_path
         #when /the root path/
         #  root_path
-        #else
-        #  nil
-        #end
+        else
+          nil
+        end
       end
 
     end
