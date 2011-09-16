@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110916091722) do
+ActiveRecord::Schema.define(:version => 20110727112336) do
 
   create_table "events", :force => true do |t|
     t.string    "title"
@@ -280,16 +280,6 @@ ActiveRecord::Schema.define(:version => 20110916091722) do
   add_index "slugs", ["locale"], :name => "index_slugs_on_locale"
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
-
-  create_table "tweets", :force => true do |t|
-    t.text     "body"
-    t.integer  "status_id"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tweets", ["id"], :name => "index_tweets_on_id"
 
   create_table "user_plugins", :force => true do |t|
     t.integer "user_id"
