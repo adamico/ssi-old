@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110727112336) do
+ActiveRecord::Schema.define(:version => 20110916091722) do
 
   create_table "events", :force => true do |t|
     t.string    "title"
@@ -38,45 +38,45 @@ ActiveRecord::Schema.define(:version => 20110727112336) do
   end
 
   create_table "link_categories", :force => true do |t|
-    t.string   "title"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "link_categories", ["id"], :name => "index_link_categories_on_id"
 
   create_table "links", :force => true do |t|
-    t.string   "title"
-    t.string   "url"
-    t.integer  "link_category_id"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.string    "url"
+    t.integer   "link_category_id"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "links", ["id"], :name => "index_links_on_id"
 
   create_table "news_item_translations", :force => true do |t|
-    t.integer  "news_item_id"
-    t.string   "locale"
-    t.string   "title"
-    t.text     "body"
-    t.string   "external_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "news_item_id"
+    t.string    "locale"
+    t.string    "title"
+    t.text      "body"
+    t.string    "external_url"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "news_item_translations", ["news_item_id"], :name => "index_news_item_translations_on_news_item_id"
 
   create_table "news_items", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "publish_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "image_id"
-    t.datetime "expiration_date"
+    t.string    "title"
+    t.text      "body"
+    t.timestamp "publish_date"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "image_id"
+    t.timestamp "expiration_date"
   end
 
   add_index "news_items", ["id"], :name => "index_news_items_on_id"
@@ -198,8 +198,6 @@ ActiveRecord::Schema.define(:version => 20110727112336) do
     t.timestamp "created_at"
     t.timestamp "updated_at"
     t.integer   "school_id"
-    t.string    "card_type"
-    t.date      "card_expires_on"
   end
 
   add_index "registrations", ["id"], :name => "index_registrations_on_id"
@@ -280,6 +278,16 @@ ActiveRecord::Schema.define(:version => 20110727112336) do
   add_index "slugs", ["locale"], :name => "index_slugs_on_locale"
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "tweets", :force => true do |t|
+    t.text     "body"
+    t.integer  "status_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tweets", ["id"], :name => "index_tweets_on_id"
 
   create_table "user_plugins", :force => true do |t|
     t.integer "user_id"
