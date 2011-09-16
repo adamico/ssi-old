@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    tweets:
+      title: Tweets
+  admin:
+    tweets:
+      actions:
+        create_new: CREATE NEW Tweet
+        reorder: REORDR Tweets
+        reorder_done: DUN REORDERIN Tweets
+      records:
+        title: Tweets
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Tweets YET. CLICK "CREATE NEW Tweet" 2 ADD UR FURST tweet.
+      tweet:
+        view_live_html: VIEW DIS tweet LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS tweet
+        delete: REMOOV DIS tweet FOREVR
+  tweets:
+    show:
+      other: OTHR Tweets

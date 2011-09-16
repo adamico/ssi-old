@@ -4,6 +4,7 @@ PATH
     refinerycms-links (1.0)
     refinerycms-registrations (1.0)
     refinerycms-schools (1.0)
+    refinerycms-tweets (1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -290,6 +291,7 @@ DEPENDENCIES
   refinerycms-registrations (= 1.0)!
   refinerycms-schools (= 1.0)!
   refinerycms-testing (~> 1.0.1)
+  refinerycms-tweets (= 1.0)!
   spork (= 0.9.0.rc9)
   sqlite3
   state_machine

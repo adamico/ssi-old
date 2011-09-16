@@ -1,0 +1,25 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    tweets:
+      title: Tweets
+  admin:
+    tweets:
+      actions:
+        create_new: Add New Tweet
+        reorder: Reorder Tweets
+        reorder_done: Done Reordering Tweets
+      records:
+        title: Tweets
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Tweets yet. Click "Add New Tweet" to add your first tweet.
+      tweet:
+        view_live_html: View this tweet live <br/><em>(opens in a new window)</em>
+        edit: Edit this tweet
+        delete: Remove this tweet forever
+  tweets:
+    show:
+      other: Other Tweets

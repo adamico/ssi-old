@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    tweets:
+      title: Tweets
+  admin:
+    tweets:
+      actions:
+        create_new: Maak een nieuwe Tweet
+        reorder: Wijzig de volgorde van de Tweets
+        reorder_done: Klaar met het wijzingen van de volgorde van de Tweets
+      records:
+        title: Tweets
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Tweets. Druk op 'Maak een nieuwe Tweet' om de eerste aan te maken.
+      tweet:
+        view_live_html: Bekijk deze tweet op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze tweet
+        delete: Verwijder deze tweet voor eeuwig
+  tweets:
+    show:
+      other: Andere Tweets

@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    tweets:
+      title: Tweets
+  admin:
+    tweets:
+      actions:
+        create_new: Lag en ny Tweet
+        reorder: Endre rekkefølgen på Tweets
+        reorder_done: Ferdig å endre rekkefølgen Tweets
+      records:
+        title: Tweets
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Tweets enda. Klikk på "Lag en ny Tweet" for å legge til din første tweet.
+      tweet:
+        view_live_html: Vis hvordan denne tweet ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne tweet
+        delete: Fjern denne tweet permanent
+  tweets:
+    show:
+      other: Andre Tweets

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110725140603) do
+ActiveRecord::Schema.define(:version => 20110916091722) do
 
   create_table "events", :force => true do |t|
     t.string    "title"
@@ -157,34 +158,48 @@ ActiveRecord::Schema.define(:version => 20110725140603) do
 
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
 
-  create_table "registrations", :force => true do |t|
-    t.string   "surname"
-    t.string   "first_name"
-    t.string   "title"
-    t.string   "company"
-    t.string   "address"
-    t.string   "city"
-    t.string   "zip"
-    t.string   "country"
-    t.string   "phone"
-    t.string   "fax"
-    t.string   "email"
-    t.date     "arrival"
-    t.date     "departure"
-    t.string   "accompagne"
-    t.string   "ip"
-    t.integer  "payment_id"
-    t.string   "transaction_string"
-    t.integer  "status"
+  create_table "registration_transactions", :force => true do |t|
+    t.integer  "registration_id"
+    t.string   "action"
     t.integer  "amount"
-    t.string   "transmission_date"
-    t.string   "payement_date"
-    t.string   "payement_time"
-    t.datetime "date_cb"
-    t.integer  "position"
+    t.boolean  "success"
+    t.string   "authorization"
+    t.string   "message"
+    t.text     "params"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "school_id"
+  end
+
+  create_table "registrations", :force => true do |t|
+    t.string    "surname"
+    t.string    "first_name"
+    t.string    "title"
+    t.string    "company"
+    t.string    "address"
+    t.string    "city"
+    t.string    "zip"
+    t.string    "country"
+    t.string    "phone"
+    t.string    "fax"
+    t.string    "email"
+    t.date      "arrival"
+    t.date      "departure"
+    t.string    "accompagne"
+    t.string    "ip"
+    t.integer   "payment_id"
+    t.string    "transaction_string"
+    t.integer   "status"
+    t.integer   "amount"
+    t.string    "transmission_date"
+    t.string    "payement_date"
+    t.string    "payement_time"
+    t.timestamp "date_cb"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "school_id"
+    t.string    "card_type"
+    t.date      "card_expires_on"
   end
 
   add_index "registrations", ["id"], :name => "index_registrations_on_id"
@@ -265,6 +280,16 @@ ActiveRecord::Schema.define(:version => 20110725140603) do
   add_index "slugs", ["locale"], :name => "index_slugs_on_locale"
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "tweets", :force => true do |t|
+    t.text     "body"
+    t.integer  "status_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tweets", ["id"], :name => "index_tweets_on_id"
 
   create_table "user_plugins", :force => true do |t|
     t.integer "user_id"
