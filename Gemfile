@@ -65,6 +65,7 @@ gem 'state_machine'
 gem 'thin'
 gem 'geocoder'
 gem 'humanizer'
+gem 'twitter'
 
 # END USER DEFINED
 
