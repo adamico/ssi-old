@@ -19,12 +19,25 @@ module Admin
       end
     end
 
+    def destroy
+      title = @tweet.status_id
+      if @tweet.destroy
+        destroy_twitter_status(@tweet)
+        flash.notice = t('destroyed', :scope => 'refinery.crudify', :what => "#{title}")
+      end
+      redirect_to admin_tweets_url
+    end
+
     private
 
+    #TODO: a bit of rescue should be added for these methods...
     def update_twitter_status(tweet_instance)
-      #TODO: a bit of rescue should be added here...
       status = Twitter.update(tweet_instance.body)
       tweet_instance.update_attribute(:status_id, status.id)
+    end
+
+    def destroy_twitter_status(tweet_instance)
+      Twitter.status_destroy(tweet_instance.status_id)
     end
   end
 end
