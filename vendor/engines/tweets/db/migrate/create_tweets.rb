@@ -3,7 +3,7 @@ class CreateTweets < ActiveRecord::Migration
   def self.up
     create_table :tweets do |t|
       t.text :body
-      t.integer :status_id
+      t.string :status_id
       t.integer :position
 
       t.timestamps
