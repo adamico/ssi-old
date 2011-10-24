@@ -75,3 +75,5 @@ gem 'refinerycms-registrations', '1.0', :path => 'vendor/engines'
 gem 'refinerycms-links', '1.0', :path => 'vendor/engines'
 
 gem 'refinerycms-tweets', '1.0', :path => 'vendor/engines'
+
+gem 'newrelic_rpm'
