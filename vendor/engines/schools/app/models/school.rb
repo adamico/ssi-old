@@ -13,6 +13,10 @@ class School < ActiveRecord::Base
     all.reject {|school| school === School.next}
   end
 
+  def self.announced
+    with_state(:announced).last
+  end
+
   def self.next
     with_state(:active).first
   end
@@ -24,9 +28,15 @@ class School < ActiveRecord::Base
   def when_and_where
     if cancelled?
       "CANCELLED"
+    elsif announced?
+      month_and_year + " #{place}"
     else
       period + " (#{place})"
     end
+  end
+
+  def month_and_year
+    "#{starts_at.strftime'%B'} #{starts_at.year}"
   end
 
   def period
