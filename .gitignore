@@ -79,3 +79,4 @@ capybara-*html
 .rvmrc.*
 
 vendor/ruby
+vendor/cache
