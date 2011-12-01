@@ -9,8 +9,10 @@ class School < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode, :if => :location_changed?
 
+  self.per_page = 4
+
   def self.previous
-    all.reject {|school| school === School.next}
+    with_state(:closed)
   end
 
   def self.announced

@@ -218,10 +218,13 @@ footer#page_footer p {
   margin-right: 20px;
 }
 
-#social {
-  width: 800px;
-  margin: auto;
-}
+#container { width: 960px; margin: auto; padding: 0; }
+
+.column, .columns {float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+
+.container .one-third.column                { width: 300px; }
+.container .two-thirds.column               { width: 620px; }
+
 
 #facebook, #twitter {
   width: 320px;

@@ -295,3 +295,4 @@ DEPENDENCIES
   state_machine
   thin
   twitter
+  will_paginate (~> 3.0)
