@@ -9,12 +9,14 @@ class SchoolsController < ApplicationController
   end
 
   def next
-    @school = School.next
+    @school = School.next || School.announced
     if @school
       events = @school.events
       @events_days = events.group_by { |event| event.when.beginning_of_day }
+      render :show
+    else
+      redirect_to root_path
     end
-    render :show
   end
 
   def show

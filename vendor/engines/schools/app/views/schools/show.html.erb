@@ -21,7 +21,7 @@
       <%= @school.sub_theme %>
     </section>
     <section>
-    <span class="place"><%= @school.place %></span> - <%= @school.period %>
+    <span class="place"><%= @school.when_and_where %></span>
     </section>
     <section>
       <%= @school.organiser %>
@@ -60,14 +60,14 @@
               <% end -%>
             </div>
           </div>
+          <% if Rails.env.development? %>
+            <p id="print_program"><%= link_to "Placeholder for print programme link" %></p>
+          <% end -%>
         <% end -%>
       <% else %>
         No programmed events yet.
       <% end -%>
     </section>
-    <% if Rails.env.development? %>
-      <p id="print_program">Placeholder for print programme link</p>
-    <% end -%>
   <% end %>
 <% else -%>
   No next school found.
