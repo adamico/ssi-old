@@ -225,6 +225,9 @@ footer#page_footer p {
 .container .one-third.column                { width: 300px; }
 .container .two-thirds.column               { width: 620px; }
 
+.column h4 {
+  text-align: center;
+}
 
 #facebook, #twitter {
   width: 320px;
