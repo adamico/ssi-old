@@ -4,7 +4,7 @@
 
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(school) -%>">
   <span class='title'>
-    <%= school.title %>
+    <%= school.title.truncate(20) %>
     <span class="preview">&nbsp;</span>
   </span>
   <span class="state">

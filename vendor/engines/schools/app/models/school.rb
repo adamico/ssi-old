@@ -53,20 +53,23 @@ class School < ActiveRecord::Base
   ### default state machine 'state'
   #TODO: add a cron task to close schools after deadline
 
-  STATES = %w(draft announced active closed cancelled)
+  STATES = %w(draft announced imminent active closed cancelled)
 
   state_machine :initial => :draft do
     event :announce do
       transition :draft => :announced
     end
+    event :prepare do
+      transition :announced => :imminent
+    end
     event :activate do
-      transition :announced => :active
+      transition :imminent => :active
     end
     event :close do
       transition :active => :closed
     end
     event :cancel do
-      transition all - [:cancelled] => :cancelled
+      transition all - [:cancelled, :closed] => :cancelled
     end
   end
 end
