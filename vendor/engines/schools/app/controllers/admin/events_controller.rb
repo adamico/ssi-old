@@ -4,7 +4,7 @@ module Admin
                   :only => [:new, :edit, :create, :update]
 
     crudify :event, :xhr_paging => true,
-            :sortable => false, :order => "when DESC"
+            :sortable => false
 
     def new
       @event = Event.new(:school_id => params[:school])

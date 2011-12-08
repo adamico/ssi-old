@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110916091722) do
+ActiveRecord::Schema.define(:version => 20111208143925) do
 
   create_table "events", :force => true do |t|
-    t.string    "title"
-    t.timestamp "when"
-    t.string    "speaker"
-    t.integer   "position"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "school_id"
+    t.string   "title"
+    t.datetime "starts_at"
+    t.string   "speaker"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "school_id"
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(:version => 20110916091722) do
   end
 
   create_table "link_categories", :force => true do |t|
-    t.string   "title"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "link_categories", ["id"], :name => "index_link_categories_on_id"
@@ -158,34 +158,46 @@ ActiveRecord::Schema.define(:version => 20110916091722) do
 
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
 
+  create_table "registration_transactions", :force => true do |t|
+    t.integer   "registration_id"
+    t.string    "action"
+    t.integer   "amount"
+    t.boolean   "success"
+    t.string    "authorization"
+    t.string    "message"
+    t.text      "params"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
   create_table "registrations", :force => true do |t|
-    t.string   "surname"
-    t.string   "first_name"
-    t.string   "title"
-    t.string   "company"
-    t.string   "address"
-    t.string   "city"
-    t.string   "zip"
-    t.string   "country"
-    t.string   "phone"
-    t.string   "fax"
-    t.string   "email"
-    t.date     "arrival"
-    t.date     "departure"
-    t.string   "accompagne"
-    t.string   "ip"
-    t.integer  "payment_id"
-    t.string   "transaction_string"
-    t.integer  "status"
-    t.integer  "amount"
-    t.string   "transmission_date"
-    t.string   "payement_date"
-    t.string   "payement_time"
-    t.datetime "date_cb"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "school_id"
+    t.string    "surname"
+    t.string    "first_name"
+    t.string    "title"
+    t.string    "company"
+    t.string    "address"
+    t.string    "city"
+    t.string    "zip"
+    t.string    "country"
+    t.string    "phone"
+    t.string    "fax"
+    t.string    "email"
+    t.date      "arrival"
+    t.date      "departure"
+    t.string    "accompagne"
+    t.string    "ip"
+    t.integer   "payment_id"
+    t.string    "transaction_string"
+    t.integer   "status"
+    t.integer   "amount"
+    t.string    "transmission_date"
+    t.string    "payement_date"
+    t.string    "payement_time"
+    t.timestamp "date_cb"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "school_id"
   end
 
   add_index "registrations", ["id"], :name => "index_registrations_on_id"
@@ -268,11 +280,11 @@ ActiveRecord::Schema.define(:version => 20110916091722) do
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "tweets", :force => true do |t|
-    t.text     "body"
-    t.string   "status_id"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text      "body"
+    t.string    "status_id"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "tweets", ["id"], :name => "index_tweets_on_id"
