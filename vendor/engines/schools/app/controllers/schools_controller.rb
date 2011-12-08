@@ -9,7 +9,7 @@ class SchoolsController < ApplicationController
   end
 
   def next
-    @school = School.next || School.announced
+    @school = School.next_or_imminent
     if @school
       events = @school.events
       @events_days = events.group_by { |event| event.when.beginning_of_day }

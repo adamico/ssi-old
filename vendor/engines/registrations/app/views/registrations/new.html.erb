@@ -9,108 +9,112 @@
     <%=raw @page.content_for(Page.default_parts.first.to_sym) %>
 
     <% if @registration -%>
-      <section>
-        <h4 class="title"><%= @school.title %></h4>
-        <h4 class="theme"><%= @school.theme %></h4>
-      </section>
-      <section>
-        <%= image_fu @school.vignlieu, "128x128" %>
-        <% require 'uri'
-          location = URI.escape(@school.location)
-        %>
-        <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=128x128&sensor=false&zoom=15&markers=#{@school.latitude}%2C#{@school.longitude}"), "http://maps.google.com/maps?q=#{location}&z=14", :target => "_blank" %>
-      </section>
-      <section>
-        <p class="registration_fee"><b>REGISTRATION FEE : <%= @school.price.to_int.to_s %> €</b> <span class="price_without_vat">(<%= @school.price_without_vat %> € + VAT 19.6%)</span></p>
-        <p class="deadline">DEADLINE FOR REGISTRATION : <%= l @school.deadline, :format => :long %>
-      </section>
-      <section class="extranight">
-        <%= raw @school.extranight %>
-      </section>
-      <%= form_for @registration do |f| %>
-        <%= render :partial => "/shared/admin/error_messages",
-                   :locals => {
-                     :object => @registration,
-                     :include_object_name => true
-                   } %>
+      <% if @school.active? -%>
+        <section>
+          <h4 class="title"><%= @school.title %></h4>
+          <h4 class="theme"><%= @school.theme %></h4>
+        </section>
+        <section>
+          <%= image_fu @school.vignlieu, "128x128" %>
+          <% require 'uri'
+            location = URI.escape(@school.location)
+          %>
+          <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=128x128&sensor=false&zoom=15&markers=#{@school.latitude}%2C#{@school.longitude}"), "http://maps.google.com/maps?q=#{location}&z=14", :target => "_blank" %>
+        </section>
+        <section>
+          <p class="registration_fee"><b>REGISTRATION FEE : <%= @school.price.to_int.to_s %> €</b> <span class="price_without_vat">(<%= @school.price_without_vat %> € + VAT 19.6%)</span></p>
+          <p class="deadline">DEADLINE FOR REGISTRATION : <%= l @school.deadline, :format => :long %>
+        </section>
+        <section class="extranight">
+          <%= raw @school.extranight %>
+        </section>
+        <%= form_for @registration do |f| %>
+          <%= render :partial => "/shared/admin/error_messages",
+                     :locals => {
+                       :object => @registration,
+                       :include_object_name => true
+                     } %>
 
-        <div class='field'>
-          <%= f.hidden_field :school_id %>
-        </div>
-        <div class='field'>
-          <%= f.hidden_field :amount %>
-        </div>
-        <div class='field'>
-          <%= f.required_label :surname %>
-          <%= f.text_field :surname, :autofocus => true %>
-        </div>
-        <div class='field'>
-          <%= f.required_label :first_name %>
-          <%= f.text_field :first_name %>
-        </div>
-        <div class='field'>
-          <%= f.label :title %>
-          <%= f.text_field :title, :placeholder => "Mr, Ms, Mrs.." %>
-        </div>
-        <div class='field'>
-          <%= f.required_label :company %>
-          <%= f.text_field :company %>
-        </div>
-        <div class='field'>
-          <%= f.required_label :address %>
-          <%= f.text_field :address %>
-        </div>
-        <div class='field inline'>
-          <%= f.required_label :city %>
-          <%= f.text_field :city %>
-        </div>
-        <div class='field inline'>
-          <%= f.required_label :zip %>
-          <%= f.text_field :zip %>
-        </div>
-        <div class='field'>
-          <%= f.required_label :country %>
-          <%= f.text_field :country %>
-        </div>
-        <div class='field'>
-          <%= f.required_label :phone %>
-          <%= f.text_field :phone, :type => "tel", :placeholder => "Eg. +33472116911" %>
-        </div>
-        <div class='field'>
-          <%= f.label :fax %>
-          <%= f.text_field :fax, :type => "tel" %>
-        </div>
-        <div class='field'>
-          <%= f.required_label :email %>
-          <%= f.text_field :email, :type => "email", :placeholder => "me@example.com" %>
-        </div>
-        <div class='field'>
-          <%= f.hidden_field :arrival %>
-          <%= f.required_label :formatted_arrival, "Arrival" %>
-          <%= f.text_field :formatted_arrival, :placeholder => "Date of arrival" %>
-        </div>
-        <div class='field'>
-          <%= f.hidden_field :departure %>
-          <%= f.required_label :formatted_departure, "Departure" %>
-          <%= f.text_field :formatted_departure, :placeholder => "Date of departure" %>
-        </div>
-        <div class='field'>
-          <%= f.label :accompagne, "Accompanying person" %>
-          <%= f.text_field :accompagne, :placeholder => "Enter name if relevant" %>
-        </div>
-        <div class='field'>
-          <%= f.label :payment_id, "Payment by" %>
-          <%= f.collection_select :payment_id, Payment.all, :id, :name %>
-        </div>
-        <div class='field'>
-          <%= f.label :humanizer_answer, @registration.humanizer_question %>
-          <%= f.text_field :humanizer_answer, :placeholder => "Enter the answer here" %>
-          <%= f.hidden_field :humanizer_question_id %>
-        </div>
-        <div class='actions'>
-          <%= f.submit t('registrations.new.send') %>
-        </div>
-      <% end %>
+          <div class='field'>
+            <%= f.hidden_field :school_id %>
+          </div>
+          <div class='field'>
+            <%= f.hidden_field :amount %>
+          </div>
+          <div class='field'>
+            <%= f.required_label :surname %>
+            <%= f.text_field :surname, :autofocus => true %>
+          </div>
+          <div class='field'>
+            <%= f.required_label :first_name %>
+            <%= f.text_field :first_name %>
+          </div>
+          <div class='field'>
+            <%= f.label :title %>
+            <%= f.text_field :title, :placeholder => "Mr, Ms, Mrs.." %>
+          </div>
+          <div class='field'>
+            <%= f.required_label :company %>
+            <%= f.text_field :company %>
+          </div>
+          <div class='field'>
+            <%= f.required_label :address %>
+            <%= f.text_field :address %>
+          </div>
+          <div class='field inline'>
+            <%= f.required_label :city %>
+            <%= f.text_field :city %>
+          </div>
+          <div class='field inline'>
+            <%= f.required_label :zip %>
+            <%= f.text_field :zip %>
+          </div>
+          <div class='field'>
+            <%= f.required_label :country %>
+            <%= f.text_field :country %>
+          </div>
+          <div class='field'>
+            <%= f.required_label :phone %>
+            <%= f.text_field :phone, :type => "tel", :placeholder => "Eg. +33472116911" %>
+          </div>
+          <div class='field'>
+            <%= f.label :fax %>
+            <%= f.text_field :fax, :type => "tel" %>
+          </div>
+          <div class='field'>
+            <%= f.required_label :email %>
+            <%= f.text_field :email, :type => "email", :placeholder => "me@example.com" %>
+          </div>
+          <div class='field'>
+            <%= f.hidden_field :arrival %>
+            <%= f.required_label :formatted_arrival, "Arrival" %>
+            <%= f.text_field :formatted_arrival, :placeholder => "Date of arrival" %>
+          </div>
+          <div class='field'>
+            <%= f.hidden_field :departure %>
+            <%= f.required_label :formatted_departure, "Departure" %>
+            <%= f.text_field :formatted_departure, :placeholder => "Date of departure" %>
+          </div>
+          <div class='field'>
+            <%= f.label :accompagne, "Accompanying person" %>
+            <%= f.text_field :accompagne, :placeholder => "Enter name if relevant" %>
+          </div>
+          <div class='field'>
+            <%= f.label :payment_id, "Payment by" %>
+            <%= f.collection_select :payment_id, Payment.all, :id, :name %>
+          </div>
+          <div class='field'>
+            <%= f.label :humanizer_answer, @registration.humanizer_question %>
+            <%= f.text_field :humanizer_answer, :placeholder => "Enter the answer here" %>
+            <%= f.hidden_field :humanizer_question_id %>
+          </div>
+          <div class='actions'>
+            <%= f.submit t('registrations.new.send') %>
+          </div>
+        <% end %>
+      <% else -%>
+        <h3>Registrations will open on <%= @school.registrations_start_at %></h2>
+      <% end -%>
     <% else -%>
       <h3>Registrations are closed.</h2>
     <% end -%>

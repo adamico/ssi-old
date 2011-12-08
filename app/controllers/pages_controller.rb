@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   # This action is usually accessed with the root path, normally '/'
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
-    @school = School.next || School.announced
+    @school = School.next_or_imminent
   end
 
   # This action can be accessed normally, or as nested pages.

@@ -27,7 +27,7 @@ class RegistrationsController < ApplicationController
   end
 
   def find_school
-    @school = School.try(:next)
+    @school = School.try(:next_or_imminent)
   end
 
   def success
