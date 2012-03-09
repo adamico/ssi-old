@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
 
   delegate :title, :to => :school, :prefix => true, :allow_nil => true
 
+  default_scope order('starts_at ASC')
   def time
     self.starts_at.strftime("%R")
   end

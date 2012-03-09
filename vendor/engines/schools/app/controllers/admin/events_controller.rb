@@ -19,7 +19,7 @@ module Admin
     end
 
     def find_all_events
-      @events = @school.events
+      @events = @school.events.order('starts_at')
     end
     def find_all_schools
       @schools = School.all
