@@ -51,7 +51,7 @@
                   <div class="event when"><%= event.time %></div>
                   <div class="event gutter"> - </div>
                   <div class="event title_and_speaker">
-                    <span class="title"><%= event.title %></span>
+                    <span class="title"><%= raw event.title %></span>
                     <% unless event.speaker.blank? %>
                       <span class="speaker"><%= event.speaker %></span>
                     <% end %>

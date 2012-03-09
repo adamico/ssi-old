@@ -27,8 +27,8 @@
   padding: 0;
 }
 
-.title {
-  font-weight: bold;
+.title p {
+  margin: 0
 }
 
 .speaker:before {

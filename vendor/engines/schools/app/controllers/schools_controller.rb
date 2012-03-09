@@ -12,7 +12,7 @@ class SchoolsController < ApplicationController
     @school = School.next_or_imminent
     if @school
       events = @school.events
-      @events_days = events.group_by { |event| event.when.beginning_of_day }
+      @events_days = events.group_by { |event| event.starts_at.beginning_of_day }
       render :show
     else
       redirect_to root_path
