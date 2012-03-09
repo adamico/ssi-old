@@ -16,7 +16,7 @@
 
   <div class='field'>
     <%= f.label :starts_at -%>
-    <%= f.datetime_select :starts_at  -%>
+    <%= f.datetime_select :starts_at, :default => @school.starts_at  -%>
   </div>
 
   <div class='field'>

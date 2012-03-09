@@ -8,6 +8,7 @@ module Admin
 
     def new
       @event = Event.new(:school_id => params[:school])
+      @school = School.find(params[:school])
     end
     protected
 
