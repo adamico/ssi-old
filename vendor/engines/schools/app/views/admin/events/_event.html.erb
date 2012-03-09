@@ -1,6 +1,6 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(event) -%>">
   <span class="school">
-    <%= event.school_title.truncate(7) %>
+    <%= event.day_month %>
   </span>
   <span class="event_time"><%= event.time %></span>
   <span class='title'>
