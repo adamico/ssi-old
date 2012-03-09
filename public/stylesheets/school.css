@@ -27,7 +27,12 @@
   padding: 0;
 }
 
+.title, .speaker {
+  display: inline;
+}
+
 .title p {
+  display: inline-block;
   margin: 0
 }
 
