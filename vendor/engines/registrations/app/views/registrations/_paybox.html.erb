@@ -2,12 +2,14 @@
 
 <form method="POST" action="https://preprod-tpeweb.paybox.com/cgi/MYchoix_pagepaiement.cgi">
   <%= paybox_hidden_fields :site => 1999888,
-    :rang => 99,
+    :rang => 32,
     :identifiant => 2,
-    :total => @registration.amount,
+    :total => registration.amount,
     :devise => 978,
-    :cmd => @registration.id.to_s,
-    :porteur => @registration.email,
-    :retour => "amount:M;reference:R;autorization:A;error:E;sign:K" %>
+    :cmd => registration.id.to_s,
+    :porteur => registration.email,
+    :retour => "amount:M;registration:R;autorization:A;error:E;sign:K" %>
     <input type=submit name=bouton_payement value='Checkout'>
 </form>
+
+<%= render 'change', registration: registration %>

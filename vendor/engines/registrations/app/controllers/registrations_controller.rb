@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
 
-  before_filter :find_page, :only => [:create, :new]
+  before_filter :find_page, :only => [:create, :new, :edit, :update]
   before_filter :find_school
 
   def new
@@ -15,6 +15,19 @@ class RegistrationsController < ApplicationController
       success
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @registration = Registration.find(params[:id])
+  end
+
+  def update
+    @registration = Registration.find(params[:id])
+    if @registration.update_attributes(params[:registration])
+      success
+    else
+      render 'edit'
     end
   end
 

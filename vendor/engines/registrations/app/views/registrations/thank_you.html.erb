@@ -3,11 +3,11 @@
   <p>This registration has been filed with the <strong>number #<%= @registration.id %></strong>.</p>
   <% case @registration.payment_name
     when "check" -%>
-    <%= render 'check' %>
+    <%= render 'check', registration: @registration %>
   <% when "bank transfer" -%>
-    <%= render 'bank_transfer' %>
+    <%= render 'bank_transfer', registration: @registration %>
   <% else %>
-    <%= render 'paybox' %>
+    <%= render 'paybox', registration: @registration %>
   <% end -%>
   <%= raw @page[:body] %>
 <% end -%>

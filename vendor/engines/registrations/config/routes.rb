@@ -7,7 +7,7 @@
   get '/ipn', :to => "paybox#ipn", :as => "payment_callback"
 
   resources :registrations,
-            :only => :create
+            :only => [:new, :create, :edit, :update]
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     resources :registrations, :only => [:index, :show, :destroy]
