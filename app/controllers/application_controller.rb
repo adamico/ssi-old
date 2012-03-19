@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
   before_filter :ensure_domain, :old_api_redirect
 
   APP_DOMAIN = 'www.school-immunotoxicology.org'
+  APP_STAGING = 'ssi-staging.herokuapp.com'
 
   def ensure_domain
-    if Rails.env.production? && request.remote_ip != "127.0.0.1"
+    if Rails.env.production? && request.remote_ip != "127.0.0.1" && request.env['HTTP_HOST'] != APP_STAGING
       if request.env['HTTP_HOST'] != APP_DOMAIN
         # HTTP 301 is a "permanent" redirect
         redirect_to "http://#{APP_DOMAIN}", :status => 301
