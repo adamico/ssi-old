@@ -1,6 +1,10 @@
 ::Refinery::Application.routes.draw do
   get '/registration', :to => 'registrations#new', :as => 'new_registration'
   get '/thank_you' => "registrations#thank_you"
+  get '/payment_accepted', :to => "paybox#accepted", :as => 'payment_accepted'
+  get '/payment_refused', :to => "paybox#refused", :as => 'payment_refused'
+  get '/payment_canceled', :to => "paybox#canceled", :as => 'payment_canceled'
+  get '/ipn', :to => "paybox#ipn", :as => "payment_callback"
 
   resources :registrations,
             :only => :create

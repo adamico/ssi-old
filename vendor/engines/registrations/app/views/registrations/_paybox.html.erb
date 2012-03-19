@@ -1,0 +1,13 @@
+<p>You've chosen the online payment method. By pressing the 'checkout' button below, you'll be redirected to our secure online payment system.</p>
+
+<form method="POST" action="https://preprod-tpeweb.paybox.com/cgi/MYchoix_pagepaiement.cgi">
+  <%= paybox_hidden_fields :site => 1999888,
+    :rang => 99,
+    :identifiant => 2,
+    :total => @registration.amount,
+    :devise => 978,
+    :cmd => @registration.id.to_s,
+    :porteur => @registration.email,
+    :retour => "amount:M;reference:R;autorization:A;error:E;sign:K" %>
+    <input type=submit name=bouton_payement value='Checkout'>
+</form>

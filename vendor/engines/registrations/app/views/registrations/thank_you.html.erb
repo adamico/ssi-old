@@ -1,13 +1,13 @@
 <% content_for :body_content_left do %>
   <p>Thank you for registering, Dear <strong><%= @registration.title_with_name %></strong>.</p>
   <p>This registration has been filed with the <strong>number #<%= @registration.id %></strong>.</p>
-  <% case @registration.payment_name 
+  <% case @registration.payment_name
     when "check" -%>
     <%= render 'check' %>
   <% when "bank transfer" -%>
     <%= render 'bank_transfer' %>
   <% else %>
-    <p>The credit card transaction was successful.</p>
+    <%= render 'paybox' %>
   <% end -%>
   <%= raw @page[:body] %>
 <% end -%>

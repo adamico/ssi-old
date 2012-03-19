@@ -3,9 +3,8 @@ class RegistrationsController < ApplicationController
   before_filter :find_page, :only => [:create, :new]
   before_filter :find_school
 
-
   def new
-    @registration = Registration.new(:school_id => @school.id, :amount => @school.price) if @school
+    @registration = Registration.new(:school_id => @school.id, :amount => @school.price * 10) if @school
   end
 
   def create
@@ -13,7 +12,6 @@ class RegistrationsController < ApplicationController
     @registration.ip = request.remote_ip
 
     if @registration.save
-      #TODO: add branch for online transfer with sips/atos module
       success
     else
       render 'new'
