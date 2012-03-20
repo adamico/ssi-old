@@ -22,7 +22,7 @@ class PayboxController < ApplicationController
   end
 
   def accepted
-    @registration.update_attribute(:status, 1)
+    @registration.accept!
     @page = Page.find_by_link_url("/payment_accepted")
   end
 

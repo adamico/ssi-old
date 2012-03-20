@@ -28,7 +28,14 @@ class Registration < ActiveRecord::Base
     [self.try(:title), first_name, surname].join(" ")
   end
 
-  def payed?
-    status == 1
+  STATES = %w(pending payed refunded)
+
+  state_machine initial: :pending do
+    event :accept do
+      transition pending: :payed
+    end
+    event :refund do
+      transition payed: :refunded
+    end
   end
 end
