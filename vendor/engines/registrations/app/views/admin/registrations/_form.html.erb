@@ -75,48 +75,13 @@
   </div>
   
   <div class='field'>
-    <%= f.label :ip -%>
-    <%= f.text_field :ip  -%>
-  </div>
-  
-  <div class='field'>
     <%= f.label :payment_id -%>
-    <%= f.text_field :payment_id  -%>
+    <%= f.collection_select :payment_id, Payment.all, :id, :name, :include_blank => true -%>
   </div>
   
   <div class='field'>
-    <%= f.label :transaction -%>
-    <%= f.text_field :transaction  -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :status -%>
-    <%= f.text_field :status  -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :amount -%>
-    <%= f.text_field :amount  -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :transmission_date -%>
-    <%= f.text_field :transmission_date  -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :payement_date -%>
-    <%= f.text_field :payement_date  -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :payement_time -%>
-    <%= f.text_field :payement_time  -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :date_cb -%>
-    <%= f.datetime_select :date_cb  -%>
+    <%= f.label :state -%>
+    <%= f.collection_select :state_event, @registration.state_transitions, :event, :human_to_name, :include_blank => @registration.human_state_name  -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",

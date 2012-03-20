@@ -5,6 +5,7 @@ class School < ActiveRecord::Base
 
   belongs_to :vignlieu, :class_name => 'Image'
   has_many :events, :dependent => :destroy
+  has_many :registrations, :dependent => :destroy
 
   geocoded_by :location
   after_validation :geocode, :if => :location_changed?

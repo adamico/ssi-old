@@ -30,12 +30,12 @@ class Registration < ActiveRecord::Base
 
   STATES = %w(pending payed refunded)
 
-  state_machine initial: :pending do
+  state_machine :initial => :pending do
     event :accept do
-      transition pending: :payed
+      transition :pending => :payed
     end
     event :refund do
-      transition payed: :refunded
+      transition :payed => :refunded
     end
   end
 end

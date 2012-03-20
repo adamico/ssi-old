@@ -10,7 +10,7 @@
             :only => [:new, :create, :edit, :update]
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
-    resources :registrations, :only => [:index, :show, :destroy]
+    resources :registrations, :except => [:new, :create, :show]
   end
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do

@@ -1,8 +1,31 @@
-.registration_date, .registration_title, .registration_payment {
+.registration_amount, .registration_id, .registration_date, .registration_title, .registration_payment {
   float: left;
+  margin-right: 5px;
+}
+
+.registration_id {
+  font-weight: bold;
+}
+
+span.registration_state {
+  position: absolute;
+  top: 0px;
+  right: 80px;
+}
+
+span.registration_state form {
+  display: inline;
+}
+
+span.registration_state form label {
+  display: inline;
+}
+
+.registration_date {
+  font-style: italic;
 }
 
 .registration_title {
-  width: 16em;
+  width: 120px;
   margin-left: 1em;
 }
