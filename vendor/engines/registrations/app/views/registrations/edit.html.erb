@@ -5,6 +5,15 @@
   <%= stylesheet_link_tag 'jquery-ui', 'registration' %>
 <% end -%>
 <% content_for :body_content_left do %>
-  <%= render 'form', registration: @registration, page: @page, school: @school %>
+  <% if @registration.payed? -%>
+    <p>You cannot edit your registration further as the <%= @registration.payment_name %> payment you provided has already been accepted.</p>
+    <p>If you need to modify the details of your registration please contact us at <%= mail_to "contact@school-immunotoxicology.org", nil, replace_at: "_at_", replace_dot: "_dot_", subject: "[Registration ##{@registration.id}]"%></p>
+  <% else %>
+    <div class='registrations'>
+      <%=raw @page.content_for(Page.default_parts.first.to_sym) %>
+
+      <%= render 'form', registration: @registration, school: @school %>
+    </div>
+  <% end -%>
 <% end %>
 <%= render :partial => "/shared/content_page" %>

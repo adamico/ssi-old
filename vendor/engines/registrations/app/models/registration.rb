@@ -27,4 +27,8 @@ class Registration < ActiveRecord::Base
   def title_with_name
     [self.try(:title), first_name, surname].join(" ")
   end
+
+  def payed?
+    status == 1
+  end
 end

@@ -5,6 +5,18 @@
   <%= stylesheet_link_tag 'jquery-ui', 'registration' %>
 <% end -%>
 <% content_for :body_content_left do %>
-  <%= render 'form', registration: @registration, page: @page, school: @school %>
+  <div class='registrations'>
+    <%=raw @page.content_for(Page.default_parts.first.to_sym) %>
+
+    <% if @registration -%>
+      <% if @school.active? -%>
+        <%= render 'form', registration: @registration, school: @school %>
+      <% else -%>
+        <h3>Registrations are not yet open.</h2>
+      <% end -%>
+    <% else -%>
+      <h3>Registrations are closed.</h2>
+    <% end -%>
+  </div>
 <% end %>
 <%= render :partial => "/shared/content_page" %>
