@@ -4,7 +4,7 @@ class RegistrationsController < ApplicationController
   before_filter :find_school
 
   def new
-    @registration = Registration.new(:school_id => @school.id, :amount => @school.price * 10) if @school
+    @registration = Registration.new(:school_id => @school.id, :amount => @school.price * 100) if @school
   end
 
   def create
