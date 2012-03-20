@@ -126,6 +126,8 @@ GEM
     newrelic_rpm (3.3.0)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
+    paybox_system (1.0.0)
+      rack
     pg (0.11.0)
     polyglot (0.3.3)
     rack (1.2.4)
@@ -281,6 +283,7 @@ DEPENDENCIES
   geocoder
   humanizer
   newrelic_rpm
+  paybox_system
   pg
   refinerycms (= 1.0.9)
   refinerycms-i18n (~> 1.0.0)

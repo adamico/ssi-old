@@ -66,6 +66,7 @@ gem 'thin'
 gem 'geocoder'
 gem 'humanizer'
 gem 'twitter'
+gem 'paybox_system'
 
 # END USER DEFINED
 
