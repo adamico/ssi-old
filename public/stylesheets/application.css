@@ -245,3 +245,44 @@ footer#page_footer p {
 #social h4 {
   margin: 0;
 }
+
+dl.bank_coordinates {
+  clear: both;
+}
+
+dt {
+  float: left;
+  font-weight: bold;
+  text-align: right;
+  width: 160px;
+}
+
+dd {
+  margin-left: 175px;
+}
+
+dd, dt {
+  padding-top: 10px;
+}
+
+.vcard {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+
+.postal-code:after {
+  content: " - "
+}
+
+.country-name:before {
+  content: "("
+}
+
+.country-name:after {
+  content: ")"
+}
+
+.given-name {
+  font-weight: bold;
+}

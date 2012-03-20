@@ -1,5 +1,7 @@
 <% content_for :body_content_left do %>
   <%= raw @page[:body] %>
+  <p>The online payment has been canceled.</p>
+  <%= render "registrations/change", registration: @registration %>
 <% end -%>
 
 <%= render :partial => "/shared/content_page" %>
