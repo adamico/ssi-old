@@ -3,9 +3,7 @@
     <article id="next_school">
       <h3><%= link_to @school.title, program_path %></h3>
       <h2><%= @school.theme %></h2>
-      <p class='school_when_where'>
-        <%= @school.when_and_where %>
-      </p>
+      <h3 class='school_when_where'><%= @school.when_and_where %></h3>
     </article>
   <% else -%>
     <h2>No school registered in database, yet.</h2>
