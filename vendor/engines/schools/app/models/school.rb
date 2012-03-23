@@ -20,16 +20,16 @@ class School < ActiveRecord::Base
     with_state(:announced).last
   end
 
+  def self.next_or_imminent
+    self.next || self.imminent
+  end
+
   def self.imminent
     with_state(:imminent).last
   end
 
   def self.next
     with_state(:active).first
-  end
-
-  def self.next_or_imminent
-    self.next || self.imminent
   end
 
   def price_without_vat

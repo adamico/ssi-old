@@ -22,7 +22,7 @@ class SchoolsController < ApplicationController
   def show
     @school = School.find(params[:id])
     events = @school.events
-    @events_days = events.group_by { |event| event.when.beginning_of_day }
+    @events_days = events.group_by { |event| event.starts_at.beginning_of_day }
 
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @school in the line below:
